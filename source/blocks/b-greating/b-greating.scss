@@ -23,9 +23,15 @@
 }
 
 .greating_picture.m--show {
+  @extend %clearfix;
   transform: translate3D(0, 0, 0);
 }
 
 .icon{
-  @include sprite($list_1);
+  @extend %clearfix;
+  @include sprite-image($png-for-sprite-list-1);
+
+  &:after {
+    @include pseudo();
+  }
 }

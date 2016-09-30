@@ -1,0 +1,13 @@
+@import 'common/sass/_variables';
+@import 'common/sass/_mixins';
+@import 'common/sass/_extends';
+
+
+
+@import 'common/sass/mixins/_sprite';
+@import 'blocks/b-greating/b-greating';
+
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}

@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task('js:process', function() {
-    return $.gulp.src($.path.app)
+    return $.gulp.src('./source/blocks/**/*.js')
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.concat('app.js'))
       .pipe($.gp.sourcemaps.write())
