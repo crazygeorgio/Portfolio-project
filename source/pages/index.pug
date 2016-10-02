@@ -1,8 +1,16 @@
 extends ../main
 
 block variables
-  - var title = 'Страницы приветствия'
+	- var title = 'Страницы приветствия'
 
-block content
-  include ../blocks/b-greating/b-greating
-  .cwwew Вот так вот
+block content	
+	
+	.page.page_full-scr
+		header.page__header
+			a.btn.btn_clear.btn_right.btn_wide(href="#" title="" nofollow="") Авторизоваться
+
+		main.page__main
+			include ../blocks/page/page__flipper
+		
+		footer.page__footer
+			include ../blocks/copyright/copyright

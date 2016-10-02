@@ -1,0 +1,31 @@
+.profile {
+	color: $profile-color;
+	.profile__name {
+		font-family: $profile__name-font;
+		font-size: 2.8rem;
+
+		text-align: center;
+	}
+	.profile__caption {
+		font-size: 1.6rem;
+
+		text-align: center;
+
+		color: $profile__caption-color;
+	}
+	&__pic {
+		display: block;
+		overflow: hidden;
+
+		width: 14.2rem;
+		height: 14.2rem;
+		margin: 0 auto .8rem;
+
+		border-radius: 50%;
+		img {
+			min-width: 100%;
+			height: auto;
+			min-height: 100%;
+		}
+	}
+}

@@ -1,0 +1,54 @@
+.page {
+	&_full-scr {
+		position: relative;
+
+		display: table;
+		overflow: hidden;
+
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+
+		background: url("../img/page_main-background.jpg") no-repeat center center fixed;
+		background-size: cover;
+		.page__header {
+			padding: 2.4rem 10rem 0 0;
+
+			@include bp(md) {
+				padding: 2rem 2rem 0;
+			}
+		}
+		.page__header,
+		.page__footer {
+			box-sizing: border-box;
+			min-height: 7.1rem;
+		}
+		.page__footer {
+			padding: 1rem 0;
+		}
+		.page__main {
+			display: table-row;
+
+			box-sizing: border-box;
+			height: 100%;
+		}
+	}
+	&__btn-auth {
+		float: right;
+
+		margin: 2.4rem 10rem;
+		padding: 0 2.7rem;
+
+		@include bp(md) {
+			margin: 2rem;
+		}
+	}
+	&__flipper {
+		display: table-cell;
+
+		height: 100%;
+
+		text-align: center;
+		vertical-align: middle;
+	}
+}

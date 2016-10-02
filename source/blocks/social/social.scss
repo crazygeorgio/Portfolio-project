@@ -1,0 +1,30 @@
+.social {
+	font-size: 0;
+	line-height: 0;
+
+	text-align: center;
+	&__item {
+		font-size: 3rem;
+
+		display: inline-block;
+
+		margin: 0 1.35rem;
+
+		transition: color .2s;
+		vertical-align: middle;
+
+		color: $social-color;
+		&:hover {
+			color: $social-color_hover;
+		}
+		&_vk {
+			font-size: 2.9rem;
+		}
+		&_github {
+			font-size: 2.8rem;
+		}
+		&_in {
+			font-size: 2.4rem;
+		}
+	}
+}

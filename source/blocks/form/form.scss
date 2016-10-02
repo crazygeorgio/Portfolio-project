@@ -1,0 +1,137 @@
+.str-field {
+	font-size: $str-field-font-size;
+	line-height: 4.5rem;
+
+	box-sizing: border-box;
+	width: auto;
+	height: 4.5rem;
+	padding: 0 2rem;
+
+	color: $str-field-color;
+	border: 0;
+	border-radius: 2.25rem;
+	outline: none;
+	&_full-width {
+		width: 100%;
+	}
+	&::placeholder {
+		transition: text-indent .75s,color .75s,opacity .75s;
+		text-indent: 0;
+
+		opacity: 1;
+		color: rgba($str-field-color,.5);
+	}
+	&:focus::placeholder {
+		transition: text-indent .75s,color .75s,opacity .75s;
+		text-indent: -100%;
+
+		opacity: 0;
+		color: rgba($str-field-color,0);
+	}
+}
+
+
+.check-field {
+	font-size: 0;
+
+	display: inline-block;
+
+	cursor: pointer;
+	&__label {
+		font-size: 1.6rem;
+
+		margin: 0 0 0 1rem;
+
+		@extend %ibm;
+	}
+	&__input[type = "checkbox"] {
+		display: none;
+	}
+	&__input[type = "checkbox"] + &__fake-check {
+		font-size: 0;
+		line-height: 2rem;
+
+		width: 2rem;
+		height: 2rem;
+
+		transition: background-color .2s;
+		text-align: center;
+
+		color: $check-field__check-bgcolor;
+		border-radius: .2rem;
+		background-color: $check-field__check-bgcolor;
+
+		@extend %vm;
+		@extend %ibm;
+		svg {
+			font-size: 1.2rem;
+
+			transition: opacity .2s;
+
+			opacity: 0;
+
+			@extend %ibm;
+		}
+	}
+	&__input[type = "checkbox"]:checked + &__fake-check {
+		background: $check-field__check-bgcolor_checked;
+		svg {
+			opacity: 1;
+		}
+	}
+}
+
+
+.radio-field {
+	font-size: 0;
+
+	cursor: pointer;
+
+	@extend %ibm;
+	&__label {
+		font-size: 1.6rem;
+
+		margin: 0 0 0 1rem;
+
+		@extend %ibm;
+	}
+	&__input[type = "radio"] {
+		display: none;
+	}
+	&__input[type = "radio"] + &__fake-radio {
+		position: relative;
+
+		width: 2rem;
+		height: 2rem;
+
+		border-radius: 50%;
+		background-color: $radio-field__radio-bgcolor;
+
+		@extend %ibm;
+		@extend %ibm;
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+
+			width: .8rem;
+			height: .8rem;
+			margin: auto;
+
+			content: "";
+			transition: background-color .2s;
+
+			border-radius: 50%;
+			background-color: rgba($radio-field__radio-bgcolor_checked,0);
+		}
+	}
+	&__input[type = "radio"]:checked + &__fake-radio {
+		&:after {
+			background-color: rgba($radio-field__radio-bgcolor_checked,1);
+		}
+	}
+}

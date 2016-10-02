@@ -2,12 +2,9 @@
 @import 'common/sass/_mixins';
 @import 'common/sass/_extends';
 
+@import 'normalize';
+@import 'common/sass/_fonts';
 
+@import 'common/sass/_layout';
 
-@import 'common/sass/mixins/_sprite';
-@import 'blocks/b-greating/b-greating';
-
-html { 
-  background: url(images/bg.jpg) no-repeat center center fixed; 
-  background-size: cover;
-}
+@import 'blocks/**/*.scss';

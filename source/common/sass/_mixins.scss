@@ -1,32 +1,3 @@
-/* Pseudo */
-@mixin pseudo($display: block, $pos: absolute, $content: ''){
-	content: "#{$content}";
-	display: $display;
-	position: $pos;
-}
-
-
-/* Media queries */
-$MQs: true;
-
-@mixin bp($point) {
-  @if $MQs {
-    $large:  "(max-width: 1800px)";
-    $normal: "(max-width: 1200px)";
-    $ipad:   "(max-width: 768px)";
-    $iphone: "(max-width: 320px)";
-
-    @if $point == lg {
-      @media #{$large} { @content; }
-    }
-    @else if $point == md {
-      @media #{$normal} { @content; }
-    }
-    @else if $point == sm {
-      @media #{$ipad}  { @content; }
-    }
-    @else if $point == xs {
-      @media #{$phone}  { @content; }
-    }
-  }
-}
+@import 'mixins/_media.scss';
+@import 'mixins/_pseudo.scss';
+@import 'mixins/_sprite.scss';

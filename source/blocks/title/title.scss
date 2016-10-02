@@ -1,0 +1,40 @@
+.title {
+	font-family: $title-font;
+	font-size: 3.5rem;
+	line-height: 4rem;
+
+	text-transform: uppercase;
+	display:inline-block;
+
+	color: $title-color;
+	&_dark {
+		color: $title-color_dark;
+	}
+	&_white {
+		color: $title-color_white;
+	}
+	&_big {
+		font-size: 6.3rem;
+		line-height: 6.6rem;
+	}
+	&_with-line {
+		&:after {
+			display: block;
+			overflow: hidden;
+
+			width: 90px;
+			height: .3rem;
+			margin: 1.9rem auto 0;
+
+			content: "";
+
+			background-color: $title-color;
+		}
+	}
+	&_with-line.title_white:after {
+		background-color: $title-color_white;
+	}
+	&_with-line.title_dark:after {
+		background-color: $title-color_dark;
+	}
+}

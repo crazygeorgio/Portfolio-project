@@ -1,0 +1,38 @@
+.btn {
+	font-family: $btn-font;
+	font-size: $btn-font-size;
+	line-height: 4.5rem;
+
+	display: inline-block;
+
+	box-sizing: border-box;
+	height: 4.5rem;
+	padding: 0 2rem;
+
+	transition: border-color .2s linear, background-color .2s linear;
+	text-align: center;
+	text-decoration: none;
+
+	color: $btn-color;
+	border-radius: 2.25rem;
+	background-color: $btn-bgcolor;
+	&:hover {
+		background-color: $btn-bgcolor_hover;
+	}
+	&_right {
+		float: right;
+	}
+	&_wide {
+		padding: 0 2.7rem;
+	}
+	&_clear {
+		line-height: 4.3rem;
+
+		border: .1rem solid $btn-border-color_clear;
+		background: $btn-bgcolor_clear;
+		&:hover {
+			border-color: $btn-border-color_clear_hover;
+			background-color: $btn-bgcolor_clear_hover;
+		}
+	}
+}
