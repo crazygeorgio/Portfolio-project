@@ -6,7 +6,7 @@ $default-font-size: 1.6rem;
 
 
 $str-field-color: #5d5a55;
-$str-field-font-size: 1.6rem;
+$str-field-font-size: $default-font-size;
 
 
 $check-field__check-bgcolor: #fff;
@@ -18,7 +18,7 @@ $radio-field__radio-bgcolor_checked: #6c9c5a;
 
 
 $btn-font: "Roboto Medium", sans-serif;
-$btn-font-size: 1.6rem;
+$btn-font-size: $default-font-size;
 $btn-color: #fff;
 $btn-bgcolor: #6c9c5a;
 $btn-bgcolor_hover: darken(#6c9c5a,5);
@@ -36,6 +36,8 @@ $profile__caption-color: rgba(#fff,.8);
 
 $social-color: rgba(#fff,.5);
 $social-color_hover: #4e8839;
+$social-white-color: #fff;
+$social-white-color_hover:#6c9c5a;
 
 
 $nav-bgcolor: #6c9c5a;
@@ -47,7 +49,8 @@ $title-font: "Sansus Webissimo Regular", sans-serif;
 $title-color: #566358;
 $title-color_white: #fff;
 $title-color_dark: #373e42;
+$title__bg-img-color: rgba(#93c42e,.1);
 
 
-$copyright-font-size: 1.6rem;
+$copyright-font-size: $default-font-size;
 $copyright-color: #fff;

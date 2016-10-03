@@ -5,11 +5,43 @@ block variables
 
 block content	
 	
-	.page
+	.page.page_inner.page_two-bgcolors
 		header.page__header
-			a.btn.btn_clear.btn_right.btn_wide(href="#" title="" nofollow="") Авторизоваться
+			.page__header-social
+				include ../blocks/social/social_white
+			.page__header-btn-menu
+				button Меню
+			.page__header-wrap
+				.page__header-profile
+					include ../blocks/profile/profile_big-name
+				.page__header-title
+					+svg("about_header","svg-bg")
+				a.page__header-arr-down(href="#" title="")
+					+svg("arrow_down")
 
 		main.page__main
+			.page__main-row
+				.page__main-col.page__main-col-50
+					.page__title
+						h1.title.title_with-line.title_dark.title_big Обо мне
+							.title__bg-img
+								+svg("about_header","svg-bg")
+					.page__text.about
+						.about-pic
+							img(src="../assets/img/photo-big.jpg" alt="" title="")
+						.about-title
+							.title.title_with-line.title_with-line-upper Кто я
+						.about-text
+							p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+							p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 		
 		footer.page__footer
 			include ../blocks/copyright/copyright
+			.about
+				.about-pic
+					img(src="../assets/img/photo-big.jpg" alt="" title="")
+				.about-title
+					.title.title_with-line.title_with-line-upper Кто я
+				.about-text
+					p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+					p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!

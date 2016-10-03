@@ -12,7 +12,6 @@
 		text-align: center;
 	}
 	&__row {
-		font-size: 1.6rem;
 		line-height: 1;
 
 		display: block;
@@ -27,7 +26,7 @@
 		}
 		&-title {
 			font-family: "Roboto Bold", sans-serif;
-			font-weight: bold;
+			font-size: $default-font-size;
 
 			margin: -.2rem 0 1.1rem;
 		}

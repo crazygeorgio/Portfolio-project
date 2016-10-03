@@ -38,7 +38,7 @@
 
 	cursor: pointer;
 	&__label {
-		font-size: 1.6rem;
+		font-size: $default-font-size;
 
 		margin: 0 0 0 1rem;
 
@@ -89,7 +89,7 @@
 
 	@extend %ibm;
 	&__label {
-		font-size: 1.6rem;
+		font-size: $default-font-size;
 
 		margin: 0 0 0 1rem;
 
@@ -107,7 +107,6 @@
 		border-radius: 50%;
 		background-color: $radio-field__radio-bgcolor;
 
-		@extend %ibm;
 		@extend %ibm;
 		&:after {
 			position: absolute;

@@ -1,8 +1,8 @@
 block variables
 - var svg = "./assets/img/sprite.svg" 
 
-mixin svg(name)
-    svg(role="img" class="svg-icon svg-icon_" + name)
+mixin svg(name, type = "svg-icon")
+    svg(role="img" class= type + " " + type + "_" + name)
         use(xlink:href=svg + "#" + name)
 
 doctype html

@@ -1,12 +1,37 @@
 .title {
 	font-family: $title-font;
 	font-size: 3.5rem;
+	font-weight: normal;
 	line-height: 4rem;
 
+	position: relative;
+	z-index: 0;
+
+	display: inline-block;
+
+	margin: 0;
+
 	text-transform: uppercase;
-	display:inline-block;
 
 	color: $title-color;
+	&__bg-img {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+
+		width: 150%;
+		height: 150%;
+		margin-top: -10%;
+
+		transform: translate(-50%,-50%);
+		svg {
+			width: 100%;
+			height: 100%;
+
+			fill: $title__bg-img-color;
+		}
+	}
 	&_dark {
 		color: $title-color_dark;
 	}
@@ -19,22 +44,24 @@
 	}
 	&_with-line {
 		&:after {
+			position: relative;
+			left: 50%;
+
 			display: block;
 			overflow: hidden;
 
-			width: 90px;
+			width: 9rem;
 			height: .3rem;
-			margin: 1.9rem auto 0;
+			margin: 1.9rem auto 0 -4.5rem;
 
 			content: "";
 
-			background-color: $title-color;
+			background-color: CurrentColor;
 		}
 	}
-	&_with-line.title_white:after {
-		background-color: $title-color_white;
-	}
-	&_with-line.title_dark:after {
-		background-color: $title-color_dark;
+	&_with-line-upper {
+		&:after {
+			margin-top: 2.2rem;
+		}
 	}
 }

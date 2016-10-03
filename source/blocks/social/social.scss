@@ -27,4 +27,10 @@
 			font-size: 2.4rem;
 		}
 	}
+	&_white .social__item {
+		color: $social-white-color;
+		&:hover {
+			color: $social-white-color_hover;
+		}
+	}
 }

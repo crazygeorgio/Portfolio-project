@@ -1,0 +1,18 @@
+.about {
+   &-pic {
+      margin: 0 0 3.3rem;
+   }
+   &-title {
+      margin: 0 0 2.4rem;
+
+      text-align: center;
+   }
+   &-text {
+      font-size: 1.6rem;
+
+      color: #566358;
+      p {
+         margin: 0 0 1rem;
+      }
+   }
+}
