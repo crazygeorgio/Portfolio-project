@@ -34,7 +34,12 @@
 
 			text-decoration: none;
 
+			transition: color .2s;
+
 			color: #455a64;
+			&:hover {
+				color: #6c9c5a;
+			}
 			&:after {
 				position: absolute;
 				top: 0;
@@ -52,7 +57,7 @@
 			&_active {
 				font-family: "Roboto Bold", sans-serif;
 
-				color: #6c9c5a;;
+				color: #6c9c5a;
 				&:after {
 					background-color: #6c9c5a;
 				}
