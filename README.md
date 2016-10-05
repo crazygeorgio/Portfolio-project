@@ -5,7 +5,6 @@
 
 
 
-
 #Учебная сборка Loftschool (выпускной проект №1) 
 
 Stack:
@@ -13,7 +12,7 @@ Stack:
  
 Getting started:
 
-1. clone this repo
+1. git clone https://github.com/crazygeorgio/Portfolio-project.git
 2. cd path/to/
 3. npm install gulpjs/gulp-cli -g  // Install the latest Gulp CLI tools globally
 4. npm install
