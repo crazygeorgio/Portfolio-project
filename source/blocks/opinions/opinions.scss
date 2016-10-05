@@ -1,0 +1,61 @@
+.opinions {
+	font-size:0;
+	margin-bottom:-3.5rem;
+
+	&__item {
+		@extend %ibt;
+		width:38rem;
+		margin:0 1.35rem 3.5rem 1.35rem;
+		font-family: "Roboto Italic", sans-serif;
+		
+	}
+	&__author-pic {
+		display:block;
+		margin: 0 auto 1.6rem auto;
+		width:7.8rem;
+		height:7.8rem;
+		border-radius:50%;
+		overflow:hidden;
+
+		img {
+			display:block;
+			min-width:100%;
+			min-height:100%;
+		}
+	}
+	&__text {
+		font-size:1.6rem;
+		line-height:1.65;
+		color:#5d5a55;
+		margin:0 0 1.7rem;
+		text-align:left;
+		position:relative;
+		z-index:0;
+		&:after,&:before {
+			content:"“";
+			display:block;
+			font-family: Times New Roman, serif;
+			font-size:24rem;
+			line-height:1;
+			color:rgba(#93c42e,.1);
+			position:absolute;
+			z-index:-1;
+			top:-6rem;left:-.5rem;
+			width:4.5rem;
+			overflow:hidden;
+		}
+		&:before {left:3.3rem;}
+	}
+	&__author {
+		color:#4e8839;
+		font-size:1.6rem;
+		font-family: "Roboto Bold Italic", sans-serif;
+		text-align:center;
+	}
+	&__author-status {
+		color:#4e8839;
+		font-size:1.6rem;
+		text-align:center;
+		color:#373e42;
+	}
+}

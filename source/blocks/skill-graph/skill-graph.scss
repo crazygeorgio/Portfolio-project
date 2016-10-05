@@ -1,0 +1,16 @@
+.skill-graph{
+	display:block;
+	transform:rotate(-90deg);
+	&__full,&__part {
+		fill: transparent;
+	    stroke: #dfdcd5;
+	    stroke-width: 6.4;
+	    //fill:blue;
+	}
+	&__full {
+		stroke-dasharray: none;
+	}
+	&__part {
+		stroke:#78a165;
+	}
+}

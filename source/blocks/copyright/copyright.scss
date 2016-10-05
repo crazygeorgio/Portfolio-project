@@ -4,4 +4,10 @@
 	text-align: center;
 
 	color: $copyright-color;
+
+	padding: 0.7rem;
+
+	&_light {
+		font-family: "Roboto Light", sans-serif;
+	}
 }

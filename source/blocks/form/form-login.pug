@@ -1,27 +1,29 @@
 form.form-login(action="#" method="get")
-	.form-login__body
-		.form-login__title
-			.title.title_with-line.title_white Авторизуйтесь
-		label.form-login__row
-			input.str-field.str-field_full-width(type="text" value="" placeholder="Логин" name="login")
-		label.form-login__row
-			input.str-field.str-field_full-width(type="text" value="" placeholder="Пароль" name="pass")
-		label.form-login__row.check-field 
+	.form__body.form__body_bottom-padding
+		.form__title
+			.title.title_with-line Авторизуйтесь
+		label.form__row
+			input.str-field.str-field_full-width.str-field_with-icon(type="text" value="" placeholder="Логин" name="login")
+			+svg("login")
+		label.form__row
+			input.str-field.str-field_full-width.str-field_with-icon(type="text" value="" placeholder="Пароль" name="pass")
+			+svg("password")
+		label.form__row.check-field 
 			input.check-field__input(type="checkbox" value="" name="is-human") 
 			span.check-field__fake-check 
 				+svg("check")
 			span.check-field__label Я человек
-		.form-login__row
-			.form-login__row-title Вы точно не робот?
-			.form-login__radio-list
-				label.radio-field.form-login__radio-list-item
+		.form__row
+			.form__row-title Вы точно не робот?
+			.form__radio-list
+				label.radio-field.form__radio-list-item
 					input.radio-field__input(type="radio" name="radio" value="yes")
 					span.radio-field__fake-radio 
 					span.radio-field__label Да
-				label.radio-field.form-login__radio-list-item
+				label.radio-field.form__radio-list-item
 					input.radio-field__input(type="radio" name="radio" value="no")
 					span.radio-field__fake-radio
 					span.radio-field__label Не уверен
 
-	.form-login__btns
+	.form__btns
 		include ../btns/btns-form			

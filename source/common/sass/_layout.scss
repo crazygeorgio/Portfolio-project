@@ -10,7 +10,39 @@ body {
 	font-family: $default-font;
 }
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
+}
+::selection {
+	background-color:darken(#78a165,10);
+	color:#fff;
+	text-shadow: none;
+}
+.map {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	img {
+		min-width: 100%;
+		min-height: 100%;
+	}
 }
 
+.row {
+	font-size: 0;
+	&__col {
+		box-sizing: border-box;
+		padding: 2rem 0;
+		width: 100%;
+
+		@extend %ibt;
+		&_w50 {
+			width: 50%;
+		}
+		&_w33 {
+			width: 33.33%;
+		}
+	}
+}

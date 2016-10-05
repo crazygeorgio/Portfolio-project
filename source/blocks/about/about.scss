@@ -1,13 +1,13 @@
 .about {
-   &-pic {
+   &__pic {
       margin: 0 0 3.3rem;
    }
-   &-title {
+   &__title {
       margin: 0 0 2.4rem;
-
+      color: $title-color;
       text-align: center;
    }
-   &-text {
+   &__text {
       font-size: 1.6rem;
 
       color: #566358;

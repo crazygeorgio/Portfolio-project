@@ -1,0 +1,115 @@
+.blog {
+	font-size: 0;
+
+	padding: 6.8rem 2rem 4.8rem 2rem;
+	&__nav {
+		width: 370/1760*100%;
+		margin: 0 120/1760*100% 0 0;
+
+		text-align: right;
+
+		@extend %ibt;
+		&-list {
+			display: inline-block;
+
+			width: 100%;
+			max-width: 29rem;
+
+			text-align: right;
+
+			@extend %list-reset;
+		}
+		&-item {
+			font-size: 1.6rem;
+			line-height: 1.65;
+
+			margin: 0 0 1rem;
+		}
+		&-item-lnk {
+			position: relative;
+
+			display: inline-block;
+
+			padding: .8rem 0;
+
+			text-decoration: none;
+
+			color: #455a64;
+			&:after {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 100%;
+
+				display: block;
+
+				width: .3rem;
+				margin-left: 1.7rem;
+
+				content: "";
+				transition: background-color .2s;
+			}
+			&_active {
+				font-family: "Roboto Bold", sans-serif;
+
+				color: #6c9c5a;;
+				&:after {
+					background-color: #6c9c5a;
+				}
+			}
+		}
+	}
+	&__list {
+		width: 1270/1760*100%;
+		max-width: 88rem;
+		margin: -.4rem 0 0;
+
+		@extend %ibt;
+	}
+	&__item {
+		&:after {
+			content:"";
+			display:block;
+			height:.5rem;
+			background:#ecebe4;
+			max-width:68rem;
+			margin:7rem 0;
+		}
+		&:last-child:after {
+			display:none;
+		}
+		&-name {
+			font-family: "Sansus Webissimo Regular", sans-serif;
+			font-size: 3.5rem;
+			line-height: 1;
+
+			margin: 0 0 1.8rem 0;
+
+			color: #455a64;
+		}
+		&-date {
+			font-size: 1.6rem;
+
+			color: #4e8839;
+		}
+		&-text {
+			font-size: 1.6rem;
+			line-height: 1.65;
+
+			padding: 1.7rem 0 0;
+
+			color: #455a64;
+			p {
+				margin: 1rem 0 0;
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+			img {
+				margin: 1rem 0 0;
+
+				vertical-align: middle;
+			}
+		}
+	}
+}

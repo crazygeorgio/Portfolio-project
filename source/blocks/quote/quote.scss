@@ -1,0 +1,10 @@
+.quote {
+	opacity:0.5;
+	line-height:1.65;
+	&__text {
+		font-family: "Roboto Italic", sans-serif;
+	}
+	&__author {
+		font-family: "Roboto Bold Italic", sans-serif;
+	}
+}

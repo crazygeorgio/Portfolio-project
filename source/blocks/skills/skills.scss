@@ -1,0 +1,47 @@
+.skills {
+	&__title {
+		text-align:center;
+		margin:0 0 3.4rem;
+		color:$title-color;
+	}
+	&__descr {
+		font-size:1.6rem;
+		margin:0 0 4.3rem;
+	}
+	&__dir {
+		margin:0 0 2rem;
+		&-title {
+			font-size:2.8rem;
+			font-family: 'Roboto Medium', sans-serif;
+			color:#566358;
+			margin:0 0 1rem;
+		}
+		&-list {
+			@extend %list-reset;
+			font-size:0;
+			display:block;
+			margin:0 -2rem;
+		}
+		&-item {
+			@extend %ibt;
+			font-size:1.6rem;
+			width:12rem;
+			height:12rem;
+			overflow:hidden;
+			border-radius:50%;
+			position:relative;
+			margin:0 2rem 2rem;
+			&:after {
+				content: attr(data-name);
+				display:block;
+				position:absolute;
+				transform:translateY(-50%);
+				top:50%;
+				left:17%;right:17%;
+				text-align:center;
+				font-size:1.4rem;
+				color:#4e8839;
+			}
+		}
+	}
+}

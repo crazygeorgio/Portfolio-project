@@ -1,5 +1,11 @@
 .flipper {
 	perspective: 1000;
+	&__side {
+		overflow: hidden;
+
+		border-radius: .5rem;
+		background: rgba(#122620,.6);
+	}
 	&__wrap {
 		font-size: 0;
 

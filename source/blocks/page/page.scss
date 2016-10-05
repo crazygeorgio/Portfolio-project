@@ -6,25 +6,42 @@
 	min-height: 100%;
 
 	background: #f4f5f0;
-	&__header,
-	&__footer {
+	&__header {
 		box-sizing: border-box;
+
+		background: url("../img/page_main-background.jpg") no-repeat center center / cover;
+
+		&_full-scr {
+			height: 100vh;
+			min-height: 47rem;
+
+			.page__header-profile {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		&_no-bg {
+			background:none;
+		}
 	}
 	&__header-social {
 		position: absolute;
 		z-index: 5;
 		top: 2.8rem;
-		left: 1.8rem;
+		left: 3.15rem;
 	}
 	&__header-btn-menu {
 		position: absolute;
 		z-index: 10;
 		top: 2.8rem;
-		right: 1.8rem;
+		right: 3.15rem;
 	}
 	&__header-wrap {
 		position: relative;
 		z-index: 2;
+
+		padding:8rem;
+		box-sizing:border-box;
 
 		height: 100%;
 		min-height: 100%;
@@ -46,7 +63,7 @@
 			left: 0;
 
 			border-width: 8.8vw 0 0 50vw;
-			border-color: transparent transparent transparent #ebefe2;
+			border-color: transparent transparent transparent #f4f5f0;
 		}
 		&:after {
 			right: 0;
@@ -55,12 +72,20 @@
 			border-color: transparent transparent #f4f5f0 transparent;
 		}
 	}
+
+	&__header-descr {
+		font-size:1.6rem;
+		color:#fff;
+		margin:2rem 0 0;
+	}
 	&__header-profile {
 		position: relative;
-		z-index: 5;
-		top: 50%;
-
-		transform: translateY(-50%);
+		z-index:4;
+	}
+	&__header-page-title {
+		text-align:center;
+		color:#fff;
+		margin:2.1rem 0 -2.1rem;
 	}
 	&__header-title {
 		position: absolute;
@@ -98,12 +123,157 @@
 
 		margin: auto;
 
+		cursor: pointer;
 		transition: color .2s;
 		text-align: center;
 
 		color: rgba(#fff,.7);
 		&:hover {
 			color: #fff;
+		}
+	}
+	&__footer {
+		position: relative;
+		z-index: 0;
+
+		display: table;
+		overflow: hidden;
+
+		box-sizing: border-box;
+		width: 100%;
+		&-title {
+			padding: 5rem 0 2.5rem 0;
+
+			text-align: center;
+
+			color: #373e42;
+		}
+		&-opinions {
+			padding: 0 0 6.5rem 0;
+
+			text-align: center;
+		}
+		&-form {
+			overflow: hidden;
+
+			max-width: 38rem;
+			margin: 0 auto;
+
+			border-radius: .5rem;
+			background: rgba(#e0e0dc,.6);
+		}
+		&-bg {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			width: 100%;
+			height: 100%;
+			&-list-1 {
+				position: absolute;
+				bottom: 44%;
+				left: 21vw;
+
+				@include sprite($png-for-sprite-list-1);
+			}
+			&-list-2 {
+				position: absolute;
+				top: 6%;
+				left: 18.8vw;
+
+				@include sprite($png-for-sprite-list-2);
+			}
+			&-list-3 {
+				position: absolute;
+				right: 17.2vw;
+				bottom: 47%;
+
+				@include sprite($png-for-sprite-list-3);
+			}
+			&_full-src {
+				background: url(../img/footer_1800.jpg) fixed no-repeat center center / cover;
+			}
+		}
+		&-sect {
+			z-index: 5;
+
+			display: table-row;
+			&-wrap {
+				position: relative;
+
+				margin: 2.4rem 0;
+			}
+			&_bg-green {
+				background: rgba(#6c9c5a,.85);
+			}
+			&_bg-gray {
+				background: rgba(#373e42,.85);
+			}
+			&_clear {
+				display: block;
+
+				@extend %clearfix;
+			}
+		}
+		&-content {
+			display: table-cell;
+
+			box-sizing: border-box;
+			height: 100vh;
+			padding: 1rem;
+
+
+			vertical-align: middle;
+			&-wrap {
+				text-align: left;
+			}
+		}
+		&-contacts {
+			max-width: 38rem;
+			margin: auto;
+		}
+		&-col {
+			font-size: 1.6rem;
+
+			padding: 0 3rem;
+
+			color: #fff;
+			&:after {
+				position: absolute;
+				top: .6rem;
+				bottom: .6rem;
+
+				display: block;
+				overflow: hidden;
+
+				width: .1rem;
+				margin: 0 0 0 -3.1rem;
+
+				content: "";
+
+				background: rgba(#fff,.2);
+			}
+		}
+		&-navi {
+			margin: 0 0 2.1rem;
+		}
+	}
+	&__btn-top {
+		height:15.6rem;
+		line-height:15.6rem;
+		position:relative;
+		margin:0 0 -1rem;
+		text-align:center;
+		a {
+			font-size:2.7rem;
+			display:inline-block;
+			color:rgba(#fff,.7);
+			&:hover {
+				color:#fff;
+			}
 		}
 	}
 	&__btn-auth {
@@ -119,25 +289,28 @@
 	&__flipper {
 		display: table-cell;
 
+		box-sizing: border-box;
 		height: 100%;
+		padding: 1rem;
 
 		text-align: center;
 		vertical-align: middle;
 	}
-	&__main-col-50 {
-		font-size: 0;
-
-		width: 50%;
-		padding: 2rem 0;
+	.section__skills {
+		margin: -1rem 0 0;
+		padding: 0 4rem;
 	}
-	&__title {
+	.section__title {
 		position: relative;
 		z-index: 2;
 
+		box-sizing: border-box;
 		width: 48.6%;
 		margin: -1.2rem 0 3.6rem;
 
 		text-align: center;
+
+		color: $title-color_dark;
 
 		@extend %ibt;
 		@include bp(md) {
@@ -146,8 +319,12 @@
 			width: auto;
 			padding: 0 8rem;
 		}
+		&_full-width {
+			width: 100%;
+			margin: 6rem 0 3.1rem;
+		}
 	}
-	&__text {
+	.section__text {
 		width: 48.5%;
 
 		@extend %ibt;
@@ -160,6 +337,9 @@
 	}
 	&_two-bgcolors {
 		background: linear-gradient(to right, #ebefe2 0%,#ebefe2 50%,#f4f5f0 50%,#f4f5f0 100%);
+		.page__header-wrap:before {
+			border-left-color: #ebefe2;
+		}
 	}
 	&_full-scr {
 		display: table;
@@ -167,7 +347,7 @@
 		width: 100%;
 		height: 100%;
 
-		background: url("../img/page_main-background.jpg") no-repeat center center fixed;
+		background: url("../img/page_main-background.jpg") fixed no-repeat center center / cover;
 		background-size: cover;
 		.page__header {
 			padding: 2.4rem 10rem 0 0;
@@ -178,7 +358,7 @@
 		}
 		.page__header,
 		.page__footer {
-			min-height: 7.1rem;
+			min-height: 7.8rem;
 		}
 		.page__footer {
 			padding: 1rem 0;
@@ -190,15 +370,17 @@
 			height: 100%;
 		}
 	}
-	&_inner {
-		.page__header {
-			height: 100vh;
-			min-height: 505px;
+	&_full-height {
+		display: table;
 
-			background: url("../img/page_main-background.jpg") no-repeat center center;
-			background-size: cover;
-		}
+		width: 100%;
+		height: 100%;
+
 		.page__main {
+			display: table-row;
+
+			box-sizing: border-box;
+			height: 100%;
 		}
 	}
 }

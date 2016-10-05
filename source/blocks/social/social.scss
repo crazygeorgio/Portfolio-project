@@ -1,14 +1,12 @@
 .social {
 	font-size: 0;
 	line-height: 0;
-
-	text-align: center;
 	&__item {
 		font-size: 3rem;
 
 		display: inline-block;
 
-		margin: 0 1.35rem;
+		margin: 0 2.7rem 0 0;
 
 		transition: color .2s;
 		vertical-align: middle;
@@ -25,6 +23,12 @@
 		}
 		&_in {
 			font-size: 2.4rem;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 	&_white .social__item {

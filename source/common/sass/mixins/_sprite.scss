@@ -50,7 +50,7 @@ $spritesheet-image: '../img/sprite.png';
 $spritesheet-sprites: ($png-for-sprite-list-1, $png-for-sprite-list-2, $png-for-sprite-list-3, );
 $spritesheet: (235px, 223px, '../img/sprite.png', $spritesheet-sprites, );
 
-/*
+/*@include 
 The provided mixins are intended to be used with the array-like variables
 
 .icon-home {

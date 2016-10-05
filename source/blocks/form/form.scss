@@ -1,136 +1,54 @@
-.str-field {
-	font-size: $str-field-font-size;
-	line-height: 4.5rem;
+.form {
+	&__title {
+		padding: 1.3rem 0 3.1rem;
 
-	box-sizing: border-box;
-	width: auto;
-	height: 4.5rem;
-	padding: 0 2rem;
-
-	color: $str-field-color;
-	border: 0;
-	border-radius: 2.25rem;
-	outline: none;
-	&_full-width {
-		width: 100%;
+		color: $title-color_white;
+		&_green {
+			color: #566358;
+		}
 	}
-	&::placeholder {
-		transition: text-indent .75s,color .75s,opacity .75s;
-		text-indent: 0;
+	&__body {
+		padding: 2rem;
 
-		opacity: 1;
-		color: rgba($str-field-color,.5);
-	}
-	&:focus::placeholder {
-		transition: text-indent .75s,color .75s,opacity .75s;
-		text-indent: -100%;
-
-		opacity: 0;
-		color: rgba($str-field-color,0);
-	}
-}
-
-
-.check-field {
-	font-size: 0;
-
-	display: inline-block;
-
-	cursor: pointer;
-	&__label {
-		font-size: $default-font-size;
-
-		margin: 0 0 0 1rem;
-
-		@extend %ibm;
-	}
-	&__input[type = "checkbox"] {
-		display: none;
-	}
-	&__input[type = "checkbox"] + &__fake-check {
-		font-size: 0;
-		line-height: 2rem;
-
-		width: 2rem;
-		height: 2rem;
-
-		transition: background-color .2s;
 		text-align: center;
-
-		color: $check-field__check-bgcolor;
-		border-radius: .2rem;
-		background-color: $check-field__check-bgcolor;
-
-		@extend %vm;
-		@extend %ibm;
-		svg {
-			font-size: 1.2rem;
-
-			transition: opacity .2s;
-
-			opacity: 0;
-
-			@extend %ibm;
+		&_bottom-padding {
+			padding-bottom: 4.3rem;
 		}
 	}
-	&__input[type = "checkbox"]:checked + &__fake-check {
-		background: $check-field__check-bgcolor_checked;
-		svg {
-			opacity: 1;
-		}
-	}
-}
+	&__row {
+		line-height: 1;
 
-
-.radio-field {
-	font-size: 0;
-
-	cursor: pointer;
-
-	@extend %ibm;
-	&__label {
-		font-size: $default-font-size;
-
-		margin: 0 0 0 1rem;
-
-		@extend %ibm;
-	}
-	&__input[type = "radio"] {
-		display: none;
-	}
-	&__input[type = "radio"] + &__fake-radio {
 		position: relative;
 
-		width: 2rem;
-		height: 2rem;
+		display: block;
 
-		border-radius: 50%;
-		background-color: $radio-field__radio-bgcolor;
+		margin: 0 0 2rem;
 
-		@extend %ibm;
-		&:after {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+		text-align: center;
 
-			display: block;
+		color: rgba(#fff,.8);
+		&:last-child {
+			margin: 0;
+		}
+		&-title {
+			font-family: "Roboto Bold", sans-serif;
+			font-size: $default-font-size;
 
-			width: .8rem;
-			height: .8rem;
-			margin: auto;
-
-			content: "";
-			transition: background-color .2s;
-
-			border-radius: 50%;
-			background-color: rgba($radio-field__radio-bgcolor_checked,0);
+			margin: -.2rem 0 1.1rem;
 		}
 	}
-	&__input[type = "radio"]:checked + &__fake-radio {
-		&:after {
-			background-color: rgba($radio-field__radio-bgcolor_checked,1);
+	&__btns {
+		margin: -.3rem 0 0;
+	}
+	&__radio-list {
+		font-size: 0;
+	}
+	&__radio-list-item {
+		margin: 0 3.9rem 0 0;
+
+		@extend %ibm;
+		&:last-child {
+			margin: 0;
 		}
 	}
 }
