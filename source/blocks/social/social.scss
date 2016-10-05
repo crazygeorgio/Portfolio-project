@@ -37,4 +37,9 @@
 			color: $social-white-color_hover;
 		}
 	}
+	&_hover-white .social__item {
+		&:hover {
+			color: $social-white-color;
+		}		
+	}
 }
