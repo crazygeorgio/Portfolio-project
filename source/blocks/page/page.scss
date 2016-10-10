@@ -10,18 +10,17 @@
 		box-sizing: border-box;
 
 		background: url("../img/page_main-background.jpg") no-repeat center center / cover;
-
 		&_full-scr {
 			height: 100vh;
 			min-height: 47rem;
-
 			.page__header-profile {
 				top: 50%;
+
 				transform: translateY(-50%);
 			}
 		}
 		&_no-bg {
-			background:none;
+			background: none;
 		}
 	}
 	&__header-social {
@@ -30,21 +29,17 @@
 		top: 2.8rem;
 		left: 3.15rem;
 	}
-	&__header-btn-menu {
-		position: absolute;
-		z-index: 10;
-		top: 2.8rem;
-		right: 3.15rem;
+	&__header-nav {
+		float: right;
 	}
 	&__header-wrap {
 		position: relative;
 		z-index: 2;
 
-		padding:8rem 0;
-		box-sizing:border-box;
-
+		box-sizing: border-box;
 		height: 100%;
 		min-height: 100%;
+		padding: 8rem 0;
 		&:after,
 		&:before {
 			position: absolute;
@@ -72,20 +67,23 @@
 			border-color: transparent transparent #f4f5f0 transparent;
 		}
 	}
-
 	&__header-descr {
-		font-size:1.6rem;
-		color:#fff;
-		margin:2rem 0 0;
+		font-size: 1.6rem;
+
+		margin: 2rem 0 0;
+
+		color: #fff;
 	}
 	&__header-profile {
 		position: relative;
-		z-index:4;
+		z-index: 4;
 	}
 	&__header-page-title {
-		text-align:center;
-		color:#fff;
-		margin:2.1rem 0 -2.1rem;
+		margin: 2.1rem 0 -2.1rem;
+
+		text-align: center;
+
+		color: #fff;
 	}
 	&__header-title {
 		position: absolute;
@@ -174,22 +172,28 @@
 			height: 100%;
 			&-list-1 {
 				position: absolute;
-				bottom: 44%;
-				left: 21vw;
+				bottom: 44.5%;
+				left: 50%;
+
+				margin-left: -42.8rem;
 
 				@include sprite($png-for-sprite-list-1);
 			}
 			&-list-2 {
 				position: absolute;
 				top: 6%;
-				left: 18.8vw;
+				left: 50%;
+
+				margin-left: -56rem;
 
 				@include sprite($png-for-sprite-list-2);
 			}
 			&-list-3 {
 				position: absolute;
-				right: 17.2vw;
-				bottom: 47%;
+				bottom: 52.5%;
+				left: 50%;
+
+				margin-left: 45.5rem;
 
 				@include sprite($png-for-sprite-list-3);
 			}
@@ -204,7 +208,11 @@
 			&-wrap {
 				position: relative;
 
-				margin: 2.4rem 0;
+				margin: 2.4rem 0 1.9rem;
+
+				@include breakpoint($phone) {
+					margin: 1rem 0;
+				}
 			}
 			&_bg-green {
 				background: rgba(#6c9c5a,.85);
@@ -225,7 +233,6 @@
 			height: 100vh;
 			padding: 1rem;
 
-
 			vertical-align: middle;
 			&-wrap {
 				text-align: left;
@@ -241,7 +248,9 @@
 			padding: 0 3rem;
 
 			color: #fff;
-			&:after {
+
+			&:after,
+			&:before {
 				position: absolute;
 				top: .6rem;
 				bottom: .6rem;
@@ -250,40 +259,118 @@
 				overflow: hidden;
 
 				width: .1rem;
-				margin: 0 0 0 -3.1rem;
 
 				content: "";
 
 				background: rgba(#fff,.2);
 			}
+			&:after {
+				margin: 0 0 0 -3.1rem;
+			}
+			&:before {
+				display: none;
+
+				margin: 0 -3.1rem 0 0;
+			}
+			@include breakpoint($small-desktop) {
+				position: relative;
+
+				width: 50%;
+				&:after,
+				&:before {
+					display: block;
+
+					margin: 0 -.1rem;
+
+					background: rgba(#fff,.1);
+				}
+				&:after {
+					right: 0;
+				}
+				&:before {
+					left: 0;
+				}
+				&:last-child {
+					width: 100%;
+					margin-top: 1rem;
+					&:after,
+					&:after {
+						display: none;
+					}
+				}
+			}
+			@include breakpoint($phone) {
+				overflow: visible;
+
+				width: 100%;
+				text-align:center;
+				margin-bottom: 2.8rem;
+				&:after {
+					top: auto;
+					right: 1rem;
+					bottom: -1.4rem;
+					left: 1rem;
+
+					display: block;
+
+					width: auto;
+					height: .1rem;
+					margin: auto;
+
+					background: rgba(#fff,.2);
+				}
+				&:before {
+					display: none;
+				}
+				&:last-child {
+					margin:0;
+				}
+			}
 		}
 		&-navi {
-			margin: 0 0 2.4rem;
+			margin: 0 0 1.9rem;
 		}
 	}
 	&__btn-top {
-		height:15.6rem;
-		line-height:15.6rem;
-		position:relative;
-		margin:0 0 -1rem;
-		text-align:center;
+		position: relative;
+
+		height: 15.6rem;
+		margin: 0 0 -1rem;
+
+		text-align: center;
+
+		@include breakpoint($tablet) {
+			height: 11.8rem;
+		}
+		@include breakpoint($phone) {
+			height: 9.6rem;
+		}		
 		a {
-			font-size:2.7rem;
-			display:inline-block;
-			color:rgba(#fff,.7);
+			font-size: 2.7rem;
+			line-height: 2.7rem;
+			position:relative;
+			top:50%;
+			transform:translateY(-50%);
+
+			display: inline-block;
+			transition:color .2s;
+
+			color: rgba(#fff,.7);
 			&:hover {
-				color:#fff;
+				color: #fff;
 			}
 		}
 	}
 	&__btn-auth {
-		float: right;
+		display: inline-block;
 
-		margin: 2.4rem 10rem;
-		padding: 0 2.7rem;
+		margin: 2.4rem 10rem 0 0;
 
-		@include bp(md) {
-			margin: 2rem;
+		@include breakpoint($desktop) {
+			margin: 2rem 2rem 0 0;
+		}
+		@include breakpoint($phone) {
+			margin: 1rem;
 		}
 	}
 	&__flipper {
@@ -291,7 +378,7 @@
 
 		box-sizing: border-box;
 		height: 100%;
-		padding: 1rem;
+		padding: 0 1rem;
 
 		text-align: center;
 		vertical-align: middle;
@@ -313,12 +400,6 @@
 		color: $title-color_dark;
 
 		@extend %ibt;
-		@include bp(md) {
-			display: block;
-
-			width: auto;
-			padding: 0 8rem;
-		}
 		&_full-width {
 			width: 100%;
 			margin: 6rem 0 3.1rem;
@@ -328,12 +409,6 @@
 		width: 48.5%;
 
 		@extend %ibt;
-		@include bp(md) {
-			display: block;
-
-			width: auto;
-			padding: 0 8rem;
-		}
 	}
 	&_two-bgcolors {
 		background: linear-gradient(to right, #ebefe2 0%,#ebefe2 50%,#f4f5f0 50%,#f4f5f0 100%);
@@ -349,19 +424,27 @@
 
 		background: url("../img/page_main-background.jpg") fixed no-repeat center center / cover;
 		background-size: cover;
-		.page__header {
-			padding: 2.4rem 10rem 0 0;
-
-			@include bp(md) {
-				padding: 2rem 2rem 0;
-			}
-		}
 		.page__header,
 		.page__footer {
 			min-height: 7.8rem;
+
+			@include breakpoint($phone) {
+				min-height: 6.9rem;
+			}
 		}
 		.page__footer {
 			padding: 1rem 0;
+
+			@include breakpoint($phone) {
+				padding: 0;
+			}
+		}
+		.page__header {
+			text-align: right;
+
+			@include breakpoint($phone) {
+				text-align: center;
+			}
 		}
 		.page__main {
 			display: table-row;
@@ -376,6 +459,7 @@
 		width: 100%;
 		height: 100%;
 
+		table-layout: fixed;
 		.page__main {
 			display: table-row;
 

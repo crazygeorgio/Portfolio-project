@@ -12,6 +12,10 @@
 	border-radius: 2.25rem;
 	outline: none;
 	background-color: #fff;
+
+	@include breakpoint($tablet) {
+		font-size: $str-field-font-size*.875;
+	}
 	&::placeholder {
 		transition: text-indent .75s,color .75s,opacity .75s;
 		text-indent: 0;
@@ -25,7 +29,7 @@
 
 		opacity: 0;
 		color: rgba($str-field-color,0);
-	}	
+	}
 	&_full-width {
 		width: 100%;
 	}
@@ -38,14 +42,22 @@
 		}
 	}
 	&_with-icon {
-		padding-left:6.5rem;
-		background: linear-gradient(to right, #f0efea 4.5rem,#ffffff 4.5rem);
+		padding-left: 6.5rem;
+
+		background: linear-gradient(to right, #f0efea 4.5rem,#fff 4.5rem);
 		+ svg {
-			font-size:1.6rem;
-			color:#c5cace;
-			display:block;
-			position:absolute;
-			top:0;bottom:0;margin:auto;left:1.5rem;
+			font-size: 1.6rem;
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 1.5rem;
+
+			display: block;
+
+			margin: auto;
+
+			color: #c5cace;
 		}
 	}
 }
@@ -65,6 +77,10 @@
 	border-radius: 2.25rem;
 	outline: none;
 	background-color: #fff;
+
+	@include breakpoint($tablet) {
+		font-size: $str-field-font-size*.875;
+	}
 	&_full-width {
 		width: 100%;
 	}
@@ -123,8 +139,8 @@
 		border-radius: .2rem;
 		background-color: $check-field__check-bgcolor;
 
-		@extend %ibm;
 		@extend %vm;
+		@extend %ibm;
 		svg {
 			font-size: 1.2rem;
 
@@ -155,6 +171,8 @@
 
 		margin: 0 0 0 1rem;
 
+		transition: color .2s;
+
 		@extend %ibm;
 	}
 	&__input[type = "radio"] {
@@ -184,7 +202,8 @@
 			margin: auto;
 
 			content: "";
-			transition: background-color .2s;
+			transition: background-color .2s,transform .2s;
+			transform: scale(0);
 
 			border-radius: 50%;
 			background-color: rgba($radio-field__radio-bgcolor_checked,0);
@@ -192,7 +211,12 @@
 	}
 	&__input[type = "radio"]:checked + &__fake-radio {
 		&:after {
+			transform: scale(1);
+
 			background-color: rgba($radio-field__radio-bgcolor_checked,1);
 		}
+	}
+	&__input[type = "radio"]:checked + &__fake-radio + &__label {
+		color: $radio-field__radio-bgcolor_checked;
 	}
 }

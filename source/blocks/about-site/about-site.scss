@@ -1,3 +1,8 @@
 .about-site {
 	font-family: "Roboto Light", sans-serif;
+	font-size:1.6rem;
+	@include breakpoint($small-desktop) {
+		font-size:1.4rem;
+		//line-height:1.55;
+	}
 }

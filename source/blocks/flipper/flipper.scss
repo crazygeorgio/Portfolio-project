@@ -1,4 +1,6 @@
 .flipper {
+	visibility: hidden;
+
 	perspective: 1000;
 	&__side {
 		overflow: hidden;
@@ -13,7 +15,7 @@
 
 		display: inline-block;
 
-		width: 38rem;
+		max-width: 38rem;
 
 		transform-style: preserve-3d;
 	}
@@ -49,5 +51,31 @@
 		z-index: 1;
 
 		transform: rotateY(180deg);
+	}
+	&_showed {
+		visibility: visible;
+
+		transform-origin: center 30%;
+		animation-name: flipInX;
+		animation-duration: .4s;
+
+		animation-fill-mode: both;
+		backface-visibility: hidden;
+	}
+}
+
+@keyframes flipInX {
+	from {
+		transform: perspective(1000) rotate3d(1, 0, 0, -20deg);
+		animation-timing-function: ease-in;
+
+		opacity: 0;
+	}
+
+
+	to {
+		transform: perspective(1000);
+
+		opacity: 1;
 	}
 }

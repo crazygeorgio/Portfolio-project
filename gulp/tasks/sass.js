@@ -6,8 +6,11 @@ module.exports = function() {
       .pipe($.gp.sassGlob())
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass({
-        includePaths: require('node-normalize-scss').includePaths,
-        style: 'expanded'
+        includePaths: [
+          './bower_components/normalize-scss/sass/',
+          './bower_components/breakpoint-sass/stylesheets/'
+        ],
+        outputStyle: 'expanded'
       })).on('error', $.gp.notify.onError({ title: 'Style' }))
       .pipe($.gp.autoprefixer({ browsers: $.config.autoprefixerConfig}))
       .pipe($.gp.sourcemaps.write())

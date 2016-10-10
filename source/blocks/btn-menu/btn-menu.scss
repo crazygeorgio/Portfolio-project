@@ -1,0 +1,50 @@
+.btn-menu {
+	font-size: 0;
+
+	display: inline-block;
+
+	width: 4rem;
+
+	cursor: pointer;
+	transition: color .2s;
+
+	color: #fff;
+	&:after,
+	&:before,
+	span {
+		display: block;
+		overflow: hidden;
+
+		height: .5rem;
+
+		transition: opacity $base-time-open-nav, transform $base-time-open-nav;
+
+		border-radius: .25rem;
+		background-color: CurrentColor;
+		margin:auto;
+	}
+	span {
+		margin: 1rem 0;
+	}
+	&:after,
+	&:before {
+		content: "";
+	}
+	&:hover {
+		color: rgba(#fff,.8);
+	}
+
+	&_cross {
+
+		&:after {
+			transform: translateY(-1.5rem) rotate(225deg);
+		}
+		&:before {
+			transform: translateY(1.5rem) rotate(-225deg);
+		}
+		span {
+			opacity:0;
+			transform: rotate3d(0, 1, 0, 90deg);
+		}
+	}
+}

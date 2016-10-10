@@ -9,8 +9,8 @@ block content
 		header.page__header.page__header_full-scr
 			.page__header-social
 				include ../blocks/social/social_white
-			.page__header-btn-menu
-				include ../blocks/btn-menu/btn-menu
+			.page__header-nav
+				include ../blocks/nav/nav
 
 			.page__header-wrap
 				.page__header-profile
@@ -27,7 +27,11 @@ block content
 						.title__bg-img
 							+svg("about_header","svg-bg")
 				.section__text.about
+					svg
+						use(xlink:href="./assets/img/sprite555.svg")
 					.about__pic
+						img(src="../assets/img/photo-big.jpg" alt="" title="")
+						img(alt="" title="")
 						img(src="../assets/img/photo-big.jpg" alt="" title="")
 					.about__title
 						.title.title_with-line.title_with-line-upper Кто я
@@ -37,7 +41,7 @@ block content
 			.row__col.row__col_w50 
 				.section__skills.skills
 					.skills__title
-						h2.title.title_with-line.title_with-line-upper Чем я могу быть <br> вам полезен
+						h2.title.title_with-line.title_with-line-upper Чем я могу быть <br /> вам полезен
 					.skills__descr 
 						p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 					.skills__dir
@@ -138,4 +142,6 @@ block content
 						.quote__author — Martin Golding
 
 			.page__footer-sect.page__footer-sect_bg-green.page__footer-sect_clear
-				include ../blocks/copyright/copyright_light
+				
+
+	include ../blocks/preloader/preloader

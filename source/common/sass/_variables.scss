@@ -1,4 +1,10 @@
-$base-font-size: 62.5%;
+$phone: 480px;
+$tablet: 768px;
+$small-desktop: 1024px;
+$desktop: 1200px;
+$large-desktop: 1800px;
+
+$base-font-size: 10px;
 
 
 $default-font: "Roboto Regular", sans-serif;
@@ -26,6 +32,8 @@ $btn-bgcolor_clear: transparent;
 $btn-border-color_clear: #fff;
 $btn-bgcolor_clear_hover: #4e8839;
 $btn-border-color_clear_hover: #729e19;
+
+$base-time-open-nav: 0.6s;
 
 
 $profile-color: #fff;

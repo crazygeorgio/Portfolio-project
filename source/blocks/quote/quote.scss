@@ -1,10 +1,20 @@
 .quote {
 	opacity:0.5;
 	line-height:1.65;
+	font-size:1.6rem;
 	&__text {
 		font-family: "Roboto Italic", sans-serif;
 	}
 	&__author {
 		font-family: "Roboto Bold Italic", sans-serif;
 	}
+	@include breakpoint($small-desktop) {
+		font-size:1.4rem;
+		&__text {
+			font-family: "Roboto Light Italic", sans-serif;
+		}
+		&__author {
+			font-family: "Roboto Regular Italic", sans-serif;
+		}
+	}	
 }

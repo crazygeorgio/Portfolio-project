@@ -29,9 +29,6 @@
 		}
 
 	}
-	&_right {
-		float: right;
-	}
 	&_wide {
 		padding: 0 2.7rem;
 	}
@@ -45,4 +42,8 @@
 			background-color: $btn-bgcolor_clear_hover;
 		}
 	}
+
+	@include breakpoint($phone) {
+		font-size: $btn-font-size*0.875;
+	}	
 }
