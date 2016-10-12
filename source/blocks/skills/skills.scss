@@ -7,14 +7,27 @@
 	&__descr {
 		font-size:1.6rem;
 		margin:0 0 4.3rem;
+		box-sizing:border-box;
+		@include breakpoint($tablet) {
+			max-width: 45rem;
+			margin-right: auto;
+			margin-left: auto;
+			font-size:1.4rem;
+		}			
 	}
-	&__dir {
+	&__dir {		
 		margin:0 0 2rem;
+		@include breakpoint($tablet) {
+			text-align:center;
+		}		
 		&-title {
 			font-size:2.8rem;
 			font-family: 'Roboto Medium', sans-serif;
 			color:#566358;
 			margin:0 0 1rem;
+			@include breakpoint($tablet) {
+				font-size:2.1rem;
+			}			
 		}
 		&-list {
 			@extend %list-reset;
@@ -41,6 +54,9 @@
 				text-align:center;
 				font-size:1.4rem;
 				color:#4e8839;
+				@include breakpoint($tablet) {
+					font-size:1.28rem;
+				}
 			}
 		}
 	}

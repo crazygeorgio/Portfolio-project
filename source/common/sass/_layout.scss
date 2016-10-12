@@ -46,5 +46,15 @@ img {
 		&_w33 {
 			width: 33.33%;
 		}
+		&_tablet-full-width {
+			@include breakpoint($tablet) {
+				display:block;
+				width:auto;
+				padding: 0;
+			}
+			&:first-child {
+				background:#ebefe2;
+			}
+		}
 	}
 }

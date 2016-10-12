@@ -3,6 +3,10 @@
 		padding: 1.3rem 0 3.1rem;
 
 		color: $title-color_white;
+
+		@include breakpoint($phone) {
+			padding:1.1rem 0 1.7rem; 
+		}		
 		&_green {
 			color: #566358;
 		}

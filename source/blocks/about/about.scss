@@ -1,16 +1,30 @@
 .about {
    &__pic {
       margin: 0 0 3.3rem;
+      @include breakpoint($phone) {
+         margin:0 -1rem 2.5rem -1rem;
+      }
    }
    &__title {
       margin: 0 0 2.4rem;
       color: $title-color;
-      text-align: center;
+      text-align: center;  
+      @include breakpoint($phone) {
+         margin: 0 0 1.5rem;
+      }          
    }
    &__text {
       font-size: 1.6rem;
 
       color: #566358;
+
+      @include breakpoint($tablet) {
+         font-size:1.4rem;
+         padding:0 0 3.5rem;
+      }  
+      @include breakpoint($phone) {
+         padding:0 0 1.3rem;
+      }      
       p {
          margin: 0 0 1rem;
       }

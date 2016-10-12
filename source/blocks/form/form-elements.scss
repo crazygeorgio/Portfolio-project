@@ -16,6 +16,11 @@
 	@include breakpoint($tablet) {
 		font-size: $str-field-font-size*.875;
 	}
+	@include breakpoint($phone) {
+		line-height: 4rem;
+
+		height: 4rem;
+	}
 	&::placeholder {
 		transition: text-indent .75s,color .75s,opacity .75s;
 		text-indent: 0;

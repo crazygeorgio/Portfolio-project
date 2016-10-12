@@ -15,9 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 				if(!nav.classList.contains('nav_open')) {
 					nav.classList.add('nav_open');
 					this.classList.add('btn-menu_cross');
+					this.classList.add('nav__btn-menu_fixed');
 				} else {
 					nav.classList.remove('nav_open');
 					this.classList.remove('btn-menu_cross');
+					this.classList.remove('nav__btn-menu_fixed');
 				}
 			});
 			

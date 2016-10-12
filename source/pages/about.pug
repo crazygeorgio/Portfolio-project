@@ -21,24 +21,20 @@ block content
 					+svg("arrow_down")
 
 		main.section.row
-			.row__col.row__col_w50
+			.row__col.row__col_w50.row__col_tablet-full-width
 				.section__title
 					h1.title.title_with-line.title_big Обо мне
 						.title__bg-img
 							+svg("about_header","svg-bg")
 				.section__text.about
-					svg
-						use(xlink:href="./assets/img/sprite555.svg")
 					.about__pic
-						img(src="../assets/img/photo-big.jpg" alt="" title="")
-						img(alt="" title="")
 						img(src="../assets/img/photo-big.jpg" alt="" title="")
 					.about__title
 						.title.title_with-line.title_with-line-upper Кто я
 					.about__text
 						p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
 						p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
-			.row__col.row__col_w50 
+			.row__col.row__col_w50.row__col_tablet-full-width 
 				.section__skills.skills
 					.skills__title
 						h2.title.title_with-line.title_with-line-upper Чем я могу быть <br /> вам полезен
@@ -142,6 +138,6 @@ block content
 						.quote__author — Martin Golding
 
 			.page__footer-sect.page__footer-sect_bg-green.page__footer-sect_clear
+				include ../blocks/copyright/copyright_light
 				
-
 	include ../blocks/preloader/preloader

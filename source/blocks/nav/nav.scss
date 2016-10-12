@@ -34,7 +34,7 @@
 			animation-duration: $base-time-open-nav;
 			animation-timing-function: ease-out;
 
-			background: rgba(#6c9c5a,.85);
+			background: rgba(#7e9b5c,.87);
 
 			animation-fill-mode: both;
 		}
@@ -58,6 +58,8 @@
 			display: block;
 
 			padding: 1.5rem 0 1.6rem;
+
+
 			&-lnk {
 				font-family: "Sansus Webissimo Regular", sans-serif;
 				font-size: 6.3rem;
@@ -82,7 +84,22 @@
 				}
 				&:hover:after {
 					max-width: 9rem;
+					@include breakpoint($phone) {
+						max-width: 5.6rem;
+					}						
 				}
+
+				@include breakpoint($tablet) {
+					font-size: 4.9rem;
+				}
+
+				@include breakpoint($phone) {
+					font-size: 3.5rem;
+				}	
+
+				@include breakpoint($tablet (orientation landscape)) {
+					font-size: 2rem;
+				}													
 			}
 		}
 	}
@@ -91,6 +108,9 @@
 		z-index: 15;
 		top: 2.8rem;
 		right: 3.15rem;
+		&_fixed {
+			position:fixed;
+		}
 	}
 	&_open {
 		.nav__wrap {
@@ -118,6 +138,7 @@
 
 			animation-name: bounceIn;
 			animation-duration: 1s;
+			animation-timing-function: ease-in;
 
 			animation-fill-mode: both;
 			@for $i from 1 through 10 {
@@ -131,48 +152,48 @@
 
 @keyframes bounceIn {
 	0% {
-		transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3) translateZ(0);
 
 		opacity: 0;
 	}
 	20% {
-		transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1) translateZ(0);
 	}
 	40% {
-		transform: scale3d(.9, .9, .9);
+		transform: scale3d(.9, .9, .9) translateZ(0);
 	}
 	60% {
-		transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03) translateZ(0);
 	}
 	80% {
-		transform: scale3d(.97, .97, .97);
+		transform: scale3d(.97, .97, .97) translateZ(0);
 	}
 	100% {
-		transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1) translateZ(0);
 
 		opacity: 1;
 	}
 }
 @keyframes fromLeft {
 	0% {
-		transform: translateX(-100%);
+		transform: translateX(-100%) translateZ(0);
 
 		opacity: 0;
 	}
 	100% {
-		transform: translateX(0);
+		transform: translateX(0) translateZ(0);
 
 		opacity: 1;
 	}
 }
 @keyframes fromRight {
 	0% {
-		transform: translateX(100%);
+		transform: translateX(100%) translateZ(0);
 
 		opacity: 0;
 	}
 	100% {
-		transform: translateX(0);
+		transform: translateX(0) translateZ(0);
 
 		opacity: 1;
 	}

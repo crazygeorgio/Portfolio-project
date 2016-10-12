@@ -15,7 +15,10 @@
 			min-height: 47rem;
 			.page__header-profile {
 				top: 50%;
-
+				position: absolute;
+				margin: auto;
+				left: 0;
+				right: 0;
 				transform: translateY(-50%);
 			}
 		}
@@ -129,6 +132,12 @@
 		&:hover {
 			color: #fff;
 		}
+		@include breakpoint($desktop){
+			bottom: 5.8rem;
+		}
+		@include breakpoint($tablet){
+			bottom: 3.8rem;
+		}	
 	}
 	&__footer {
 		position: relative;
@@ -145,6 +154,10 @@
 			text-align: center;
 
 			color: #373e42;
+
+			@include breakpoint($tablet) {
+				padding: 3rem 0 3.2rem 0;
+			}				
 		}
 		&-opinions {
 			padding: 0 0 6.5rem 0;
@@ -237,10 +250,19 @@
 			&-wrap {
 				text-align: left;
 			}
+			@include breakpoint($phone) {
+				vertical-align: top;
+				height:79rem;
+			}
 		}
 		&-contacts {
 			max-width: 38rem;
 			margin: auto;
+			@include breakpoint($phone) {
+				margin:-1rem -1rem 0 -1rem;
+				max-width:none;
+				border-radius:0;
+			}			
 		}
 		&-col {
 			font-size: 1.6rem;
@@ -383,37 +405,16 @@
 		text-align: center;
 		vertical-align: middle;
 	}
-	.section__skills {
-		margin: -1rem 0 0;
-		padding: 0 4rem;
-	}
-	.section__title {
-		position: relative;
-		z-index: 2;
-
-		box-sizing: border-box;
-		width: 48.6%;
-		margin: -1.2rem 0 3.6rem;
-
-		text-align: center;
-
-		color: $title-color_dark;
-
-		@extend %ibt;
-		&_full-width {
-			width: 100%;
-			margin: 6rem 0 3.1rem;
-		}
-	}
-	.section__text {
-		width: 48.5%;
-
-		@extend %ibt;
-	}
 	&_two-bgcolors {
 		background: linear-gradient(to right, #ebefe2 0%,#ebefe2 50%,#f4f5f0 50%,#f4f5f0 100%);
 		.page__header-wrap:before {
 			border-left-color: #ebefe2;
+		}
+		@include breakpoint($tablet) {
+			background:#f4f5f0;
+			.page__header-wrap:after {
+				border-bottom-color: #ebefe2;
+			}
 		}
 	}
 	&_full-scr {
@@ -467,4 +468,65 @@
 			height: 100%;
 		}
 	}
+}
+
+.section__skills {
+	margin: -1rem 0 0;
+	padding: 0 4rem;
+	@include breakpoint($desktop) {
+		margin:0;
+	}
+	@include breakpoint($tablet) {
+		padding:2.5rem 1rem;
+	}		
+}
+.section__title {
+	position: relative;
+	z-index: 2;
+
+	box-sizing: border-box;
+	width: 48.6%;
+	margin: -1.2rem 0 3.6rem;
+
+	text-align: center;
+
+	color: $title-color_dark;
+
+	@extend %ibt;
+
+	@include breakpoint($desktop) {
+		display: block;
+		width: auto;
+		margin-right:auto;
+		margin-left:auto;
+	}		
+	&_full-width {
+		width: 100%;
+		margin: 6rem 0 3.1rem;		
+	}
+	@include breakpoint($tablet) {
+		margin:0;
+		padding: 2.8rem 0;
+	}	
+	@include breakpoint($phone) {
+		margin:0;
+		padding: 1.6rem 0;
+	}	
+}
+.section__text {
+	width: 48.5%;
+
+	box-sizing: border-box;
+
+	@extend %ibt;
+
+
+	@include breakpoint($desktop) {
+		display: block;
+		width: auto;
+		max-width:47rem;
+		margin-right:auto;
+		margin-left:auto;
+		padding:0 1rem;
+	}	
 }

@@ -3,13 +3,21 @@
 
 	padding: 6.8rem 2rem 4.8rem 2rem;
 
+	@include breakpoint($small-desktop) {
+		padding-top:4.9rem;
+	}
+	@include breakpoint($tablet) {
+		padding-top:3.5rem;
+	}
 	&__nav {
 		width: 370/1760*100%;
 		margin: 0 120/1760*100% 0 0;
+		font-size:0;
 
 		text-align: right;
 
 		@extend %ibt;
+
 		&-list {
 			display: inline-block;
 
@@ -64,6 +72,50 @@
 				}
 			}
 		}
+		@include breakpoint($small-desktop) {
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			position: fixed;
+			top: 0;
+			left:0;
+			width: 87.5%;
+			height: 100%;
+			max-width: 30rem;
+			z-index: 5;
+			background: #6c9c5a;
+			display: block;
+			box-shadow: 2px 0 6px 0 rgba(0, 0, 0, .25);
+
+			&:after {
+				content:"";
+				display:inline-block;
+				vertical-align:middle;
+				position:relative;
+				height: 100%;
+			}
+			&-list {
+
+				vertical-align: middle;
+
+			
+			}
+			&-item {
+				padding: 0 2rem;
+			}
+			&-item-lnk {
+				color: rgba(#fff,.7);
+				&:hover {
+					color: #fff;
+				}
+				&:after {
+					display: none;
+				}
+				&_active {
+					color: #fff;
+				}
+			}
+
+		}		
 	}
 	&__list {
 		width: 1270/1760*100%;
@@ -71,6 +123,15 @@
 		margin: -.4rem 0 0;
 
 		@extend %ibt;
+
+		@include breakpoint($small-desktop) {
+			padding:.6rem;
+			max-width:none;
+			width:auto;
+		}
+		@include breakpoint($phone) {
+			padding:0;
+		}			
 	}
 	&__item {
 		&:after {
@@ -80,6 +141,15 @@
 			background:#ecebe4;
 			max-width:68rem;
 			margin:7rem 0;
+			@include breakpoint($small-desktop) {
+				margin:5rem 0;
+			}	
+			@include breakpoint($tablet) {
+				margin:3.5rem 0;
+			}	
+			@include breakpoint($phone) {
+				margin:2.7rem 0;
+			}						
 		}
 		&:last-child:after {
 			display:none;
@@ -89,14 +159,25 @@
 			font-size: 3.5rem;
 			line-height: 1;
 
-			margin: 0 0 1.8rem 0;
+			margin: 0 0 1.8rem;
 
 			color: #455a64;
+			@include breakpoint($tablet) {
+				font-size: 3rem;
+				margin: 0 0 1.1rem;
+			}
+			@include breakpoint($phone) {
+				font-size: 2.1rem;
+			}
 		}
 		&-date {
 			font-size: 1.6rem;
 
 			color: #4e8839;
+			@include breakpoint($tablet) {
+				font-size: 1.4rem;
+				margin: 0 0 -.7rem;
+			}			
 		}
 		&-text {
 			font-size: 1.6rem;
@@ -105,6 +186,10 @@
 			padding: 1.7rem 0 0;
 
 			color: #455a64;
+			@include breakpoint($tablet) {
+				font-size: 1.4rem;
+				line-height: 1.55;
+			}				
 			p {
 				margin: 1rem 0 0;
 				&:first-child {
