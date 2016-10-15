@@ -114,19 +114,19 @@ document.addEventListener('DOMContentLoaded', function() {
 				this.sliderRoot.appendChild(blockAboutUnit);
 				this.sliderRoot.appendChild(blockNav);	
 
-				var $this = this;
+				var $that = this;
 				return new Promise(function(resolve) {
 
 					var loadedSlides = 0;
 
 					function listenLoaded(loaded, total) {
 						if(loaded == total) {
-							resolve($this);
+							resolve($that);
 						}
 					};
 
-					for(i in $this.sliderItems) {
-						var sliderItem = $this.sliderItems[i],
+					for(i in $that.sliderItems) {
+						var sliderItem = $that.sliderItems[i],
 							slideImg = new Image(),
 							slideThumb = document.createElement('span');
 
@@ -136,16 +136,16 @@ document.addEventListener('DOMContentLoaded', function() {
 						slideImg.onload = function() {
 								console.log(this.src + ' загружено в слайдер');
 								loadedSlides++;
-								listenLoaded(loadedSlides, $this.total);
+								listenLoaded(loadedSlides, $that.total);
 							};
 						slideImg.onerror = function() {
 								console.log(this.src + ' не загружено в слайдер');
 								loadedSlides++;
-								listenLoaded(loadedSlides, $this.total);
+								listenLoaded(loadedSlides, $that.total);
 							};
 
-						$this.blockNavBtnNext.appendChild(slideThumb).appendChild(slideImg);
-						$this.blockNavBtnPrev.appendChild(slideThumb.cloneNode()).appendChild(slideImg.cloneNode());
+						$that.blockNavBtnNext.appendChild(slideThumb).appendChild(slideImg);
+						$that.blockNavBtnPrev.appendChild(slideThumb.cloneNode()).appendChild(slideImg.cloneNode());
 					}
 
 				});
@@ -158,15 +158,15 @@ document.addEventListener('DOMContentLoaded', function() {
 					prev = this.getPrevNum(current),
 					nextNew = this.getNextNum(currentNew),
 					prevNew = this.getPrevNum(currentNew),
-					$this = this;
+					$that = this;
 
 				return new Promise(function(resolve) {
 
-					(type == 'next' ? $this.blockNavBtnNext : $this.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? next : prev)].classList.add('slider__nav-btn-thumb_unactive');
-					(type == 'next' ? $this.blockNavBtnNext : $this.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? next : prev)].classList.remove('slider__nav-btn-thumb_active');
-					(type == 'next' ? $this.blockNavBtnNext : $this.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? nextNew : prevNew)].classList.add('slider__nav-btn-thumb_active');
+					(type == 'next' ? $that.blockNavBtnNext : $that.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? next : prev)].classList.add('slider__nav-btn-thumb_unactive');
+					(type == 'next' ? $that.blockNavBtnNext : $that.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? next : prev)].classList.remove('slider__nav-btn-thumb_active');
+					(type == 'next' ? $that.blockNavBtnNext : $that.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb')[(type == 'next' ? nextNew : prevNew)].classList.add('slider__nav-btn-thumb_active');
 				
-					(type == 'next' ? $this.blockNavBtnNext : $this.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb_unactive')[0].addEventListener('transitionend', function() {
+					(type == 'next' ? $that.blockNavBtnNext : $that.blockNavBtnPrev).getElementsByClassName('slider__nav-btn-thumb_unactive')[0].addEventListener('transitionend', function() {
 						this.classList.remove('slider__nav-btn-thumb_unactive');
 						resolve(this);
 					});
@@ -261,9 +261,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			};
 
 			this.animationDone = function(arr) {
-				var $this = this;
+				var $that = this;
 				Promise.all(arr).then(function(results) {
-				  	$this.flag = true;
+				  	$that.flag = true;
 				  	console.log('aimation done');
 				});
 			};
