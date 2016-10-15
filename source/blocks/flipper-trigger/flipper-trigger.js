@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			if(typeof trigger[i].addEventListener !== 'function') continue;
 
-			trigger[i].addEventListener('click', function(e){
+			trigger[i].addEventListener('click', function(e) {
 				e.preventDefault();
 	 			var flipId = this.getAttribute('data-flip-id');
 	 			var flipper = document.querySelector('.flipper[data-flip-id = ' + flipId + ']');

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-	
+// PRELOADER	
 	(function(){
 		var elements = document.getElementsByTagName('*'),
 			imgs = [],
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		if(!preloader || !preloaderPercents) return;
 
-		for(i in elements) {
+		for(var i in elements) {
 			if(typeof elements[i] !== 'object') continue;
 			
 			var imgUrl = null;
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			  default:
 			    if(!elements[i].nodeName) break;
 				var bgImg = getComputedStyle(elements[i]).backgroundImage;
-				
 				if(bgImg != 'none') {
 					bgImg = bgImg.match(/url\((.*?)\)/);
 					bgImg = (bgImg !== null ? bgImg[1].replace(/('|")/g,'') : null);
@@ -51,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			img.onload = function() {
 				totalLoaded++;
 			  	setPercents(totalLoaded, totalImgs);
+			  	console.log(this.src + ' загружено');
 			};
 			img.onerror = function() {
 				totalLoaded++;
