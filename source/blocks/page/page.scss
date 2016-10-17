@@ -302,15 +302,16 @@
 				&:before {
 					display: block;
 
-					margin: 0 -.1rem;
+					margin: 0;
 
-					background: rgba(#fff,.1);
+					background: darken(#fff,50%);
 				}
 				&:after {
 					right: 0;
 				}
 				&:before {
 					left: 0;
+					margin-left: -.1rem;
 				}
 				&:last-child {
 					width: 100%;

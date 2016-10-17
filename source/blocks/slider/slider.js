@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		var slider = document.getElementsByClassName('slider');
 
-		if (!slider.length) {
-			return;
-		}	
+		if (!slider.length) return;
 
 		function Slider(root) {
 			this.sliderRoot = root;

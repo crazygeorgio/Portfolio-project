@@ -13,6 +13,7 @@
 		width: 370/1760*100%;
 		margin: 0 120/1760*100% 0 0;
 		font-size:0;
+		position:relative;
 
 		text-align: right;
 
@@ -23,6 +24,7 @@
 
 			width: 100%;
 			max-width: 29rem;
+			box-sizing:border-box;
 
 			text-align: right;
 
@@ -33,6 +35,10 @@
 			line-height: 1.65;
 
 			margin: 0 0 1rem;
+
+			&:last-child {
+				margin:0;
+			}
 		}
 		&-item-lnk {
 			position: relative;
@@ -94,10 +100,12 @@
 				height: 100%;
 			}
 			&-list {
-
 				vertical-align: middle;
-
-			
+				position: relative !important;
+				width: 100% !important;
+				max-width: 29rem !important;
+				right: auto !important;
+				top: auto !important;
 			}
 			&-item {
 				padding: 0 2rem;
@@ -134,25 +142,45 @@
 		}			
 	}
 	&__item {
+		position:relative;
+
+		margin:0 0 14.5rem;
+
+		@include breakpoint($small-desktop) {
+			margin:0 0 10.5rem;
+		}	
+		@include breakpoint($tablet) {
+			margin:0 0 7.5rem;
+		}	
+		@include breakpoint($phone) {
+			margin:0 0 5.9rem;
+		}			
 		&:after {
 			content:"";
 			display:block;
+			position:absolute;
+			top:100%;
+			left:0;
+			width:100%;
 			height:.5rem;
 			background:#ecebe4;
 			max-width:68rem;
-			margin:7rem 0;
+			margin-top:7rem;
 			@include breakpoint($small-desktop) {
-				margin:5rem 0;
+				margin-top:5rem;
 			}	
 			@include breakpoint($tablet) {
-				margin:3.5rem 0;
+				margin-top:3.5rem;
 			}	
 			@include breakpoint($phone) {
-				margin:2.7rem 0;
+				margin-top:2.7rem;
 			}						
 		}
-		&:last-child:after {
-			display:none;
+		&:last-child {
+			&:after {
+				display:none;
+			}
+			margin: 0;
 		}
 		&-name {
 			font-family: "Sansus Webissimo Regular", sans-serif;
