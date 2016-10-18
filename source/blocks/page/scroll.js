@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		            requestAnimFrame(tick);
 		            window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
 		        } else {
-		            console.log('scroll done');
+		            //console.log('scroll done');
 		            window.scrollTo(0, scrollTargetY);
 		        }
 		    }
@@ -64,10 +64,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		    tick();
 		}
 
-
-
 		var link = document.querySelectorAll('[href^="#"]'),
 		    speed = 0.5;
+
+		function getElementScrollPosition(element) {
+			
+			if(!element) return;
+			var scrollTop = (window.pageYOffset || document.documentElement.scrollTop),	
+				elementId = element.href.match(/#(.*)/i),
+				elementOfPage;
+
+				elementOfPage = document.getElementById(elementId[1]);
+				
+			return elementOfPage ? scrollTop + elementOfPage.getBoundingClientRect().top : 0;
+		
+		}
 		
 		for(var i in link) {
 			
@@ -77,15 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				e.preventDefault();
 
-				var scrollTop = (window.pageYOffset || document.documentElement.scrollTop),	
-					elementId = this.href.match(/#(.*)/i),
-					elementTop = scrollTop + document.getElementById(elementId[1]).getBoundingClientRect().top,
+				var scrollTo = getElementScrollPosition(this),
 					start = null;
 
-					console.log(elementId);
-				console.log('+++++++++++++++',elementTop,'++++++++++++++++++++');
-				//window.scrollTo(0, elementTop);
-				scrollToY(elementTop, 5000);
+				scrollToY(scrollTo, 3000);
 
 		  	});
 		}

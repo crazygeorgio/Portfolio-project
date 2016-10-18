@@ -6,7 +6,7 @@
 	width: 4rem;
 
 	cursor: pointer;
-	transition: color .2s;
+	transition: opacity .2s;
 
 	color: #fff;
 	&:after,
@@ -31,7 +31,7 @@
 		content: "";
 	}
 	&:hover {
-		color: rgba(#fff,.8);
+		opacity: .8;
 	}
 
 	&_cross {

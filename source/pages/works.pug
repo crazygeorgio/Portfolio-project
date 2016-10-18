@@ -17,10 +17,10 @@ block content
 					include ../blocks/profile/profile_big-name
 				.page__header-title
 					+svg("works_header","svg-bg")
-				a.page__header-arr-down(href="#" title="")
+				a.page__header-arr-down(href="#main" title="")
 					+svg("portf_arrow_down")
 
-		main.page__main.section
+		main.page__main.section(id="main")
 			.section__title.section__title_full-width
 				h1.title.title_with-line.title_big Мои работы
 					.title__bg-img.title__bg-img_big
@@ -45,7 +45,7 @@ block content
 					.page__footer-form
 						include ../blocks/form/form-contact
 					.page__btn-top
-						a(href="#" title="")
+						a(href="#top" title="")
 							+svg("portf_arrow_up")
 
 
