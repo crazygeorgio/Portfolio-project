@@ -229,7 +229,7 @@ function initMap() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: myLatLng,
-		zoom: 12,
+		zoom: 15,
 		mapTypeControl: false,
 		panControl: false,
       	zoomControl: true,
@@ -239,6 +239,7 @@ function initMap() {
       	streetViewControl: false,
       	mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false,
+        draggable: !("ontouchend" in document),
         styles: styleMap
 	});
 
