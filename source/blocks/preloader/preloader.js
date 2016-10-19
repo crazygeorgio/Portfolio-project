@@ -62,12 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			var percents = Math.ceil(totalLoaded / totalImgs * 100);
 
 			clearInterval(timer);
+			preloaderPercents.textContent = showedPercents;
 
 			if(percents >= 100) {
 				preloaderPercents.textContent = showedPercents = 100;
 
 				if(preloader) {
 					preloader.classList.add('preloader_hidden');
+					document.getElementsByTagName('html')[0].classList.add('_loaded');
 				}
 
 			} else {

@@ -44,6 +44,8 @@
 	&__item {
 		display: table-cell;
 
+		vertical-align:middle;
+
 		text-align: center;
 	}
 	&__item:first-child &__link {

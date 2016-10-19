@@ -1,4 +1,6 @@
 .form {
+	overflow: hidden;
+	position: relative;
 	&__title {
 		padding: 1.3rem 0 3.1rem;
 
@@ -53,6 +55,22 @@
 		@extend %ibm;
 		&:last-child {
 			margin: 0;
+		}
+	}
+	&__wrap-blur {
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		z-index:-1;
+		filter:blur(20px);
+		transform: translateZ(0);
+		background-image: url(../img/footer_1800.jpg);
+		background-repeat: no-repeat;
+		border-radius:.5rem;
+		&_alt {
+			background:rgba(#fff,0.4);
 		}
 	}
 }

@@ -145,8 +145,9 @@ document.addEventListener('DOMContentLoaded', function() {
 				this.checkActive();	
 				this.triggerMobileMenu();
 				window.addEventListener('scroll', this.fixed.bind({'blogContainer' : this.blogContainer, 'blogMenu' : this.blogMenu, 'blogWrap' : this.blogWrap}));	
+				window.addEventListener('resize', this.fixed.bind({'blogContainer' : this.blogContainer, 'blogMenu' : this.blogMenu, 'blogWrap' : this.blogWrap}));	
 				window.addEventListener('scroll', this.checkActive.bind({'blogMenu' : this.blogMenu}));
-
+				window.addEventListener('resize', this.checkActive.bind({'blogMenu' : this.blogMenu}));
 			}
 			
 		};

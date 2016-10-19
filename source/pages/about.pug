@@ -101,9 +101,8 @@ block content
 	
 		footer.page__footer
 			.page__footer-bg
-				.map
-					a(href="###")
-						img(src="../assets/img/map.jpg" alt="" title="")
+				.map(id="map")
+				script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXCjIJRjufIFLeAbTDHRwCgdmPk3OgFv8&callback=initMap")
 			.page__footer-sect
 				.page__footer-content
 						.page__footer-contacts.contacts

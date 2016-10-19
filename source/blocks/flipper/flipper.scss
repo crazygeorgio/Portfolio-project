@@ -1,7 +1,7 @@
 .flipper {
 	visibility: hidden;
 
-	perspective: 1000;
+	perspective: 1000px;
 	&__side {
 		overflow: hidden;
 
@@ -52,21 +52,22 @@
 
 		transform: rotateY(180deg);
 	}
-	&_showed {
-		visibility: visible;
+}
+._loaded .flipper {
+	visibility: visible;
 
-		transform-origin: center 30%;
-		animation-name: flipInX;
-		animation-duration: .4s;
+	transform-origin: center 30%;
+	animation-name: flipInX;
+	animation-duration: .4s;
+	animation-delay: .4s;
 
-		animation-fill-mode: both;
-		backface-visibility: hidden;
-	}
+	animation-fill-mode: both;
+	backface-visibility: hidden;
 }
 
 @keyframes flipInX {
 	from {
-		transform: perspective(1000) rotate3d(1, 0, 0, -20deg);
+		transform: perspective(1000px) rotate3d(1, 0, 0, -20deg);
 		animation-timing-function: ease-in;
 
 		opacity: 0;
@@ -74,7 +75,7 @@
 
 
 	to {
-		transform: perspective(1000);
+		transform: perspective(1000px);
 
 		opacity: 1;
 	}

@@ -74,7 +74,8 @@
 	box-sizing: border-box;
 	width: auto;
 	max-width: 100%;
-	min-height: 14rem;
+	max-height: 14rem;
+	height: 14rem;
 	padding: 1.5rem 2rem;
 
 	color: $str-field-color;
