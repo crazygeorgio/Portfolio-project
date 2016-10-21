@@ -1,5 +1,6 @@
 block variables
 - var svg = "./assets/img/sprite.svg" 
+- var config = {defaultTitle : 'Да ладно, и так тоже работает?'}
 
 mixin svg(name, type = "svg-icon")
     svg(role="img" class= type + " " + type + "_" + name)
@@ -9,7 +10,7 @@ doctype html
 html
     head
         meta(charset="utf-8")
-        title #{title}
+        title= (pageTitle ? pageTitle : config.defaultTitle)
         meta(content="" name="author")
         meta(content="" name="description")
         meta(content="" name="keywords")
