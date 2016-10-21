@@ -382,7 +382,7 @@
 			line-height: 2.7rem;
 			position:relative;
 			top:50%;
-			transform:translateY(-50%);
+			transform:translateY(-50%) rotate(180deg);
 
 			display: inline-block;
 			transition:color .2s;

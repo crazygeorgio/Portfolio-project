@@ -9,6 +9,12 @@
 		&:last-child {
 			margin-right:0;
 		}
+		@include breakpoint($phone) {
+			margin:0 2%;
+			&:last-child {
+				margin:0 2%;
+			}
+		}
 	}
 	&__link {
 		color:CurrentColor;

@@ -56,10 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					transform += speedRotate ? 'rotate(' + ( (scrollTop + clientHeight) / pageHeight - 1 ) * speedRotate * 360 + 'deg)' : '';
 
 					if(transform === 'translateZ(0)') {
-						//console.log(element.style);
 						element.style.bottom = ( (scrollTop + clientHeight) / pageHeight - 1 ) * 100 + '%';
-
-						console.log(element.style);
 						return;
 					}
 

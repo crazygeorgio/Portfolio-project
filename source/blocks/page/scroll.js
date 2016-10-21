@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				var scrollTo = getElementScrollPosition(this),
 					start = null;
 
-				scrollToY(scrollTo, 3000);
+				scrollToY(scrollTo, 2000);
 
 		  	});
 		}

@@ -23,7 +23,10 @@ $.path.task.forEach(function(taskPath) {
 });
 
 $.gulp.task('default', $.gulp.series(
-  'clean',
+  $.gulp.parallel(
+    'clean',
+    'clean.tpls'
+  ),
   $.gulp.parallel(
     'sass',
     'pug',
@@ -31,6 +34,7 @@ $.gulp.task('default', $.gulp.series(
     'js:process',
     'copy:image',
     'copy:fonts',
+    'copy:pug',
     //'css:foundation',
     'sprite:png',
     'sprite:svg'
