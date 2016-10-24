@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-// PRELOADER	
+var preloader = // PRELOADER	
 	(function(){
 		var elements = document.getElementsByTagName('*'),
 			imgs = [],
@@ -10,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			preloader = document.getElementsByClassName('preloader')[0],
 			preloaderPercents = document.getElementsByClassName('preloader__progress-text')[0],	
 			timer;
-
-setTimeout(function() {
 
 		if(!preloader || !preloaderPercents) return;
 
@@ -34,6 +31,7 @@ setTimeout(function() {
 			  default:
 			    if(!elements[i].nodeName) break;
 				var bgImg = getComputedStyle(elements[i]).backgroundImage;
+				console.log(bgImg);
 				if(bgImg != 'none') {
 					bgImg = bgImg.match(/url\((.*?)\)/);
 					bgImg = (bgImg !== null ? bgImg[1].replace(/('|")/g,'') : null);
@@ -88,8 +86,9 @@ setTimeout(function() {
 
 			}
 		}
-},700);
 
-	})()
+	})();
 
-});
+window.onload = function() {
+	preloader;
+}
