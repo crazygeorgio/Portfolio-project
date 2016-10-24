@@ -1,0 +1,20 @@
+@import 'common/sass/_variables';
+@import 'common/sass/_mixins';
+@import 'common/sass/_extends';
+
+@import 'normalize/import-now';
+
+@import 'breakpoint';
+@include breakpoint-set('no queries', false);
+@include breakpoint-set('default feature', 'max-width');
+
+@import 'common/sass/_fonts';
+
+@import 'common/sass/_layout';
+
+@import 'admin/blocks/**/*.scss';
+
+@import 'blocks/preloader/preloader.scss';
+@import 'blocks/form/form.scss';
+@import 'blocks/form/form-elements.scss';
+@import 'blocks/btn/btn.scss';

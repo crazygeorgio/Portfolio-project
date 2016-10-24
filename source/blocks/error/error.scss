@@ -1,0 +1,19 @@
+.error {
+   padding:2rem;
+   color:#fff;
+   display:table-cell;
+   height:100%;
+   vertical-align:middle;
+   text-align:center;
+   &__descr {
+      font-size: 1.6rem; 
+      margin-top:2rem;       
+   }
+   &__back-link {
+      color:CurrentColor;  
+      text-decoration:underline;    
+   }
+   &__back-link:hover {
+      text-decoration:none;
+   }
+}

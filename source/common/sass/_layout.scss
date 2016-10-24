@@ -20,32 +20,33 @@ img {
 	color:#fff;
 	text-shadow: none;
 }
-.map {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background:#f2f2f2;
-	img {
-		min-width: 100%;
-		min-height: 100%;
-	}
-}
-
 .row {
 	font-size: 0;
 	&__col {
 		box-sizing: border-box;
 		padding: 2rem 0;
 		width: 100%;
-
+		
 		@extend %ibt;
 		&_w50 {
 			width: 50%;
 		}
+		&_w50.row__col_with-margin {
+			width: 49%;
+			margin:0 0 0 2%;
+			&:nth-child(2n-1) {
+				margin:0;
+			}
+		}
 		&_w33 {
 			width: 33.33%;
+		}
+		&_w33.row__col_with-margin {
+			width: 32%;
+			margin:0 0 0 2%;
+			&:nth-child(3n-2) {
+				margin:0;
+			}
 		}
 		&_tablet-full-width {
 			@include breakpoint($tablet) {

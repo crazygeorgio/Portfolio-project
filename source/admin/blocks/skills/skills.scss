@@ -1,0 +1,44 @@
+.skills {
+	font-size:0;
+
+	@extend %clearfix;
+
+	&__category {
+		display: inline-block;
+		vertical-align: top;
+		display:table;
+		table-layout: fixed;
+		float:left;
+		margin:0 3rem 3rem 0;
+
+		&-title {
+			font: 1.6rem 'Roboto Bold', Arial, sans-serif;
+			color:#444;
+		}
+	}
+
+	&__item {
+		display:table-row;
+
+		&-name,&-val,&-percent {
+			display:table-cell;
+			vertical-align:middle;
+			padding:1rem;
+		}
+		&-name,&-percent {
+			font-size:1.6rem;
+		}
+		&-val {
+			width:4rem;
+			padding:1rem 0;
+			input {
+				text-align:center;
+			}
+		}
+
+	}
+	&__btn.skills__btn {
+		clear:both;
+		text-align:left;
+	}
+}

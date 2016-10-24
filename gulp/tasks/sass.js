@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task('sass', function() {
-    return $.gulp.src('./source/app.scss')
+    return $.gulp.src(['./source/app.scss', './source/admin.scss'])
       .pipe($.gp.sassGlob())
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass({

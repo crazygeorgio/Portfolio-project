@@ -10,5 +10,8 @@
 	}
 	&__btns {
 		margin: -.3rem 0 0;
+		overflow:hidden;
+		border-bottom-right-radius: .5rem;
+		border-bottom-left-radius: .5rem;		
 	}
 }

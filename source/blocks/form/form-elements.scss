@@ -4,6 +4,7 @@
 
 	box-sizing: border-box;
 	width: auto;
+	max-width:100%;
 	height: 4.5rem;
 	padding: 0 2rem;
 
@@ -12,6 +13,9 @@
 	border-radius: 2.25rem;
 	outline: none;
 	background-color: #fff;
+	transition: background-color .2s;
+
+	appearance: none;
 
 	@include breakpoint($tablet) {
 		font-size: $str-field-font-size*.875;
@@ -39,9 +43,7 @@
 		width: 100%;
 	}
 	&_bg-opacity {
-		transition: background-color .2s;
-
-		background-color: rgba(#fff,.85);
+		background-color: rgba(#fff,.6);
 		&:focus {
 			background-color: #fff;
 		}
@@ -49,13 +51,13 @@
 	&_with-icon {
 		padding-left: 6.5rem;
 
-		background: linear-gradient(to right, #f0efea 4.5rem,#fff 4.5rem);
+		background-image: linear-gradient(to right, #f0efea 4.5rem,transparent 4.5rem);
 		+ svg {
 			font-size: 1.6rem;
+			height: 4.5rem;
 
 			position: absolute;
 			top: 0;
-			bottom: 0;
 			left: 1.5rem;
 
 			display: block;
@@ -63,8 +65,21 @@
 			margin: auto;
 
 			color: #c5cace;
+			@include breakpoint($phone) {
+				height: 4rem;
+			}			
 		}
 	}
+	&_mini {
+		line-height: 3rem;
+		height: 3rem;
+		border-radius:1rem;
+		padding: 0 1rem;
+	}
+}
+.file-field {
+	font-size:16px;
+	color:#444;
 }
 
 .text-field {
@@ -74,15 +89,20 @@
 	box-sizing: border-box;
 	width: auto;
 	max-width: 100%;
-	max-height: 14rem;
-	height: 14rem;
 	padding: 1.5rem 2rem;
+
+	min-height: 14rem;
 
 	color: $str-field-color;
 	border: 0;
 	border-radius: 2.25rem;
 	outline: none;
 	background-color: #fff;
+
+	&_fixed {
+		max-height: 14rem;
+		height: 14rem;
+	}
 
 	@include breakpoint($tablet) {
 		font-size: $str-field-font-size*.875;
@@ -93,7 +113,7 @@
 	&_bg-opacity {
 		transition: background-color .2s;
 
-		background-color: rgba(#fff,.85);
+		background-color: rgba(#fff,.6);
 		&:focus {
 			background-color: #fff;
 		}
@@ -225,4 +245,24 @@
 	&__input[type = "radio"]:checked + &__fake-radio + &__label {
 		color: $radio-field__radio-bgcolor_checked;
 	}
+}
+
+._error {
+	background-color:#f3c0c0;
+	color:#cc3333;
+	&::placeholder {
+		color:#cc9999;
+	}
+}
+._error[type = "checkbox"] + .check-field__fake-check {
+	background-color:#f3c0c0;
+}
+._error[type = "radio"] + .radio-field__fake-radio {
+	background-color:#f3c0c0;
+}
+
+
+.str-field_bg-opacity._error,
+.text-field_bg-opacity._error  {
+	background-color: rgba(#f3c0c0,.6);
 }

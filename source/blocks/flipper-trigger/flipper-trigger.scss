@@ -1,19 +1,13 @@
 .flipper-trigger {
 	&_back {
 		transition: visibility 0s linear 0s, opacity .6s, transform .6s;
-		animation-duration: .6s;
-
-		animation-fill-mode: both;
-
-		perspective: 1000;
 	}
 	&_hidden {
 		visibility: hidden;
 
 		transition: visibility 0s linear .6s, opacity .6s, transform .6s;
 		transform: translate3d(0, -100%, 0);
-		animation-name: fadeOutDown;
-		
+
 		opacity: 0;
 	}
 }

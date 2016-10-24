@@ -10,9 +10,9 @@ module.exports = function() {
       }));
 
     var imgStream = spriteData.img
-      .pipe($.buffer())
-      .pipe($.gp.imagemin({use: [$.optPNG()]}))
-      .pipe($.gp.tinypng('VI6Y8kDOlJPat45s63ccM4jM5a4Vw7QR'))
+      // .pipe($.buffer())
+      // .pipe($.gp.imagemin({use: [$.optPNG()]}))
+      // .pipe($.gp.tinypng('VI6Y8kDOlJPat45s63ccM4jM5a4Vw7QR'))
       .pipe($.gulp.dest($.config.root + '/assets/img'));
     
     var cssStream = spriteData.css

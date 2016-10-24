@@ -53,6 +53,10 @@ $transition-time-nav: .5s;
 		}
 	}	
 
+	&__items {
+		display:none;
+	}
+
 	&__about-unit {
 		box-sizing: border-box;
 		width: 50%;
@@ -69,6 +73,7 @@ $transition-time-nav: .5s;
 		}		
 	}
 	&__init-pic {
+		user-select: none;
 		font-size: 20px;
 
 		position: relative;
@@ -201,6 +206,7 @@ $transition-time-nav: .5s;
 			}
 		}
 		&-btn_prev  {
+			user-select: none;
 			.slider__nav-icon:after {
 				content: "\e901";
 			}
@@ -229,6 +235,7 @@ $transition-time-nav: .5s;
 			}
 		}
 		&-btn_next {
+			user-select: none;
 			.slider__nav-icon:after {
 				content: "\e900";
 			}

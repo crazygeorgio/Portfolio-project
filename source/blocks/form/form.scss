@@ -1,6 +1,6 @@
 .form {
-	overflow: hidden;
 	position: relative;
+	overflow:hidden;
 	&__title {
 		padding: 1.3rem 0 3.1rem;
 
@@ -45,6 +45,12 @@
 	}
 	&__btns {
 		margin: -.3rem 0 0;
+		overflow:hidden;
+		border-bottom-right-radius: .5rem;
+		border-bottom-left-radius: .5rem;
+	}
+	&__btn {
+		text-align:center;
 	}
 	&__radio-list {
 		font-size: 0;
@@ -55,6 +61,19 @@
 		@extend %ibm;
 		&:last-child {
 			margin: 0;
+		}
+	}
+	&__tip {
+		display:block;
+		font-size:1.2rem;
+		line-height:1.2rem;
+		&-message {
+			display:inline-block;
+			padding:.5rem;
+			border-radius:.5rem;
+			margin-top:.5rem;
+			color:#fff;
+			background:rgba(#cc0000,.85);
 		}
 	}
 	&__wrap-blur {
@@ -73,4 +92,17 @@
 			background:rgba(#fff,0.4);
 		}
 	}
+}
+
+@keyframes showssTip {
+	0% {
+		transform: translate3d(0, 1rem, 0);
+		opacity: 0;
+		visibility:hidden;
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+		visibility: visible;
+	}	
 }

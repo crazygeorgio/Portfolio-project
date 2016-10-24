@@ -30,14 +30,19 @@
 		text-decoration: none;
 		text-overflow: ellipsis;
 
-		transition: background-color .2s;
+		transition: background-color .2s, color .2s;
 
 		color: $nav-color;
 		border: 0;
 		outline: none;
 		background: rgba($nav-bgcolor,.85);
 		box-shadow: inset 1px 0 0 0 $nav-border-color,  inset -1px 0 0 0 $nav-border-color;
+		&_lighten {
+			background: rgba($nav-bgcolor,.6);
+			color:rgba($nav-color, .6);
+		}
 		&:hover {
+			color: $nav-color;
 			background-color: rgba(red($nav-bgcolor) - 30, green($nav-bgcolor) - 20, blue($nav-bgcolor) - 33, .85);
 		}
 	}

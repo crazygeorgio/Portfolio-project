@@ -17,8 +17,17 @@
 	color: $btn-color;
 	border-radius: 2.25rem;
 	background-color: $btn-bgcolor;
+
+	border:0;
+	
 	&:hover {
 		background-color: $btn-bgcolor_hover;
+	}
+	&_small {
+		height: 2.2rem;
+		line-height: 2.2rem;
+		padding: 0 1rem;	
+		font-size: $btn-font-size/1.4;	
 	}
 	&_with-icon {
 		svg {
