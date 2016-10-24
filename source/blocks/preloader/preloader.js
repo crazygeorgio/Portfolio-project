@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			preloaderPercents = document.getElementsByClassName('preloader__progress-text')[0],	
 			timer;
 
+setTimeout(function() {
+
 		if(!preloader || !preloaderPercents) return;
 
 		for(var i in elements) {
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			}
 		}
-
+},700);
 
 	})()
 
