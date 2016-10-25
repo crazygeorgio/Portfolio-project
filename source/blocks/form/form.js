@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-
 //FORMS	
 var allForms = document.getElementsByTagName('form'),
 	ajaxForms = document.getElementsByClassName('ajax-form'),
@@ -166,7 +164,7 @@ var allForms = document.getElementsByTagName('form'),
 
 		}
 
-	})()
+	})();
 
 	for(i = 0; i < allForms.length; i++) {
 		allForms[i].noValidate = true;
@@ -181,6 +179,3 @@ var allForms = document.getElementsByTagName('form'),
 			if(!forms.validateForm(this)) return;
 		};
 	};
-
-
-});

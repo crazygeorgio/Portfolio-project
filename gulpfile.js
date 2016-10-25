@@ -35,7 +35,7 @@ $.gulp.task('default', $.gulp.series(
     'copy:image',
     'copy:fonts',
     'copy:pug',
-    //'css:foundation',
+    'css:foundation',
     'sprite:png',
     'sprite:svg'
   ),

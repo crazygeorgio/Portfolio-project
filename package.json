@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "browser-sync": "2.11.2",
+    "fg-loadcss": "^1.2.0",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-cheerio": "^0.6.2",
